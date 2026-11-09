@@ -1,0 +1,19 @@
+{
+  "name": "MPI TP 7.4 — My Family / My Friends and I",
+  "short_name": "MPI TP 7.4",
+  "description": "Media Pembelajaran Interaktif Bahasa Inggris Kelas VII: lima permainan untuk TP 7.4.",
+  "lang": "id",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["fullscreen", "standalone"],
+  "orientation": "any",
+  "background_color": "#EEF4F7",
+  "theme_color": "#12324B",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

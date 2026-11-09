@@ -1,0 +1,1589 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#12324B">
+<meta name="description" content="Media Pembelajaran Interaktif Bahasa Inggris Kelas VII — TP 7.4 My Family / My Friends and I. Lima permainan, berjalan tanpa internet.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%2312324B%22/%3E%3Ccircle cx=%2232%22 cy=%2230%22 r=%2214%22 fill=%22%23D9A47A%22/%3E%3Cpath d=%22M18 28 Q18 14 32 14 Q46 14 46 28 Q40 20 32 20 Q24 20 18 28Z%22 fill=%22%231E1611%22/%3E%3Ccircle cx=%2227%22 cy=%2231%22 r=%222.2%22 fill=%22%23151515%22/%3E%3Ccircle cx=%2237%22 cy=%2231%22 r=%222.2%22 fill=%22%23151515%22/%3E%3Cpath d=%22M27 37 Q32 41 37 37%22 stroke=%22%237A3B2E%22 stroke-width=%222%22 fill=%22none%22/%3E%3Crect x=%2218%22 y=%2246%22 width=%2228%22 height=%228%22 rx=%224%22 fill=%22%237FD3E6%22/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>MPI TP 7.4 My Family</title>
+<style>
+:root{
+  --navy:#12324B; --teal:#0E7490; --teal-dark:#0B5566; --sky:#7FD3E6;
+  --paper:#EEF4F7; --card:#FFFFFF; --ink:#1F2A33; --muted:#5B6B75; --line:#C9D6DD;
+  --sun:#F2B33D; --sun-soft:#FDF1D6; --rose:#C8466A; --rose-soft:#F9E1E8;
+  --ok:#23885A; --ok-soft:#DDF3E8; --bad:#C2413B; --bad-soft:#FBE3E1;
+  --r-lg:22px; --r-md:14px; --r-sm:10px;
+  --font:"Trebuchet MS","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --en:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--font);font-size:clamp(16px,1.15vw + 11px,22px);line-height:1.45;min-height:100vh;-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+button:focus-visible,[tabindex]:focus-visible{outline:4px solid var(--sun);outline-offset:3px}
+.hide{display:none!important}
+.wrap{max-width:1280px;margin:0 auto;padding:0 clamp(14px,2.5vw,36px)}
+
+/* ---------- top bar ---------- */
+.bar{background:var(--navy);color:#fff}
+.bar .wrap{display:flex;align-items:center;gap:12px;min-height:64px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+.bar h1{font-size:1.05em;margin:0;font-weight:700;flex:1 1 auto;min-width:0}
+.bar h1 small{display:block;font-weight:400;color:var(--sky);font-size:.72em}
+.chipbtn{background:rgba(255,255,255,.12);color:#fff;border-radius:999px;padding:.4em .9em;font-size:.8em;display:inline-flex;align-items:center;gap:.4em;white-space:nowrap}
+.chipbtn:hover{background:rgba(255,255,255,.2)}
+.chipbtn[aria-pressed="true"]{background:var(--sky);color:var(--navy);font-weight:700}
+
+/* ---------- home ---------- */
+.hero{background:var(--navy);color:#fff;padding:clamp(18px,3vw,40px) 0 clamp(70px,8vw,110px);position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(16px,3vw,48px);align-items:center}
+.hero h2{font-size:clamp(30px,4.2vw,64px);line-height:1.02;margin:.1em 0 .25em;letter-spacing:-.01em}
+.hero p{margin:0;color:#D4E7EE;max-width:34em}
+.album{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(8px,1.2vw,16px)}
+.album figure{margin:0;background:#fff;border-radius:16px;padding:8px 8px 6px;box-shadow:0 8px 0 rgba(0,0,0,.18)}
+.album figure:nth-child(odd){transform:rotate(-2.5deg)}
+.album figure:nth-child(even){transform:rotate(2deg) translateY(10px)}
+.album svg{display:block;width:100%;height:auto;border-radius:10px}
+.album figcaption{color:var(--navy);font-family:var(--en);font-weight:700;font-size:.72em;text-align:center;padding-top:4px}
+
+.modes{display:flex;gap:10px;flex-wrap:wrap;margin-top:1.1em}
+.toggle{display:inline-flex;background:rgba(255,255,255,.1);border-radius:999px;padding:4px}
+.toggle button{padding:.45em 1em;border-radius:999px;color:#fff;font-size:.85em}
+.toggle button[aria-pressed="true"]{background:#fff;color:var(--navy);font-weight:700}
+
+.path{margin-top:calc(-1 * clamp(52px,6vw,84px));position:relative;z-index:2;display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(10px,1.4vw,18px);padding-bottom:28px}
+.meet{background:var(--card);border-radius:var(--r-lg);padding:clamp(14px,1.4vw,22px);text-align:left;display:flex;flex-direction:column;gap:.45em;border:2px solid transparent;box-shadow:0 4px 0 var(--line);transition:transform .15s,border-color .15s}
+.meet:hover{border-color:var(--teal);transform:translateY(-3px)}
+.meet .num{display:flex;align-items:center;gap:.5em;color:var(--teal);font-weight:700;font-size:.82em}
+.meet .num b{display:inline-grid;place-items:center;width:2em;height:2em;border-radius:50%;background:var(--teal);color:#fff;font-size:1em}
+.meet h3{margin:.1em 0 0;font-family:var(--en);font-size:1.15em;color:var(--navy);line-height:1.15}
+.meet p{margin:0;color:var(--muted);font-size:.82em}
+.meet .go{margin-top:auto;padding-top:.5em;font-weight:700;color:var(--teal-dark);font-size:.85em}
+
+.guide{background:var(--card);border-radius:var(--r-lg);padding:clamp(16px,2vw,28px);margin-bottom:36px;border:2px solid var(--line)}
+.guide h3{margin:0 0 .4em;color:var(--navy)}
+.guide table{width:100%;border-collapse:collapse;font-size:.82em}
+.guide th,.guide td{text-align:left;vertical-align:top;padding:.55em .6em;border-top:1px solid var(--line)}
+.guide th{color:var(--navy);width:13%}
+.guide .note{color:var(--muted);font-size:.8em;margin:.8em 0 0}
+.guide ul{margin:.3em 0 0;padding-left:1.2em}
+
+/* ---------- game shell ---------- */
+.game{padding:clamp(12px,2vw,26px) 0 40px}
+.ghead{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-bottom:14px}
+.ghead h2{margin:0;font-family:var(--en);color:var(--navy);font-size:clamp(22px,2.4vw,36px);line-height:1.1;flex:1 1 auto}
+.ghead h2 small{display:block;font-family:var(--font);color:var(--teal);font-size:.5em;font-weight:700}
+.back{background:var(--card);border:2px solid var(--line);border-radius:999px;padding:.45em 1em;font-weight:700;color:var(--navy)}
+.back:hover{border-color:var(--navy)}
+.clock{font-variant-numeric:tabular-nums;color:var(--muted);font-size:.85em}
+.board{display:flex;gap:8px}
+.team{border-radius:var(--r-md);padding:.35em .8em;display:flex;align-items:center;gap:.5em;font-weight:700;border:3px solid transparent;background:var(--card)}
+.team .s{font-size:1.4em;font-variant-numeric:tabular-nums}
+.team.a{color:#8A5A00;background:var(--sun-soft)}
+.team.b{color:var(--rose);background:var(--rose-soft)}
+.team.on.a{border-color:var(--sun)}
+.team.on.b{border-color:var(--rose)}
+.solo{background:var(--card);border-radius:var(--r-md);padding:.35em .9em;font-weight:700;color:var(--teal-dark)}
+.solo .s{font-size:1.3em;font-variant-numeric:tabular-nums}
+
+.task{background:var(--card);border-radius:var(--r-lg);padding:.8em 1.1em;margin-bottom:14px;display:flex;gap:.8em;align-items:flex-start;border-left:8px solid var(--teal)}
+.task p{margin:0}
+.task .en{font-family:var(--en);color:var(--muted);font-size:.82em}
+.turn{margin-left:auto;white-space:nowrap;font-weight:700;padding:.3em .8em;border-radius:999px;font-size:.85em}
+.turn.a{background:var(--sun);color:#3E2A00}
+.turn.b{background:var(--rose);color:#fff}
+
+.progress{height:10px;background:#fff;border-radius:999px;overflow:hidden;margin-bottom:14px;border:1px solid var(--line)}
+.progress i{display:block;height:100%;background:var(--teal);width:0;transition:width .3s}
+
+.btn{background:var(--teal);color:#fff;border-radius:var(--r-md);padding:.7em 1.4em;font-weight:700;font-size:1em;box-shadow:0 4px 0 var(--teal-dark)}
+.btn:hover{filter:brightness(1.08)}
+.btn:active{transform:translateY(2px);box-shadow:0 2px 0 var(--teal-dark)}
+.btn[disabled]{background:#9DB3BC;box-shadow:0 4px 0 #81979F;cursor:not-allowed}
+.btn.ghost{background:var(--card);color:var(--navy);box-shadow:0 4px 0 var(--line);border:2px solid var(--line)}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;align-items:center}
+.say{display:inline-grid;place-items:center;width:2.1em;height:2.1em;border-radius:50%;background:var(--paper);color:var(--teal-dark);flex:none}
+.say:hover{background:var(--sky)}
+.say svg{width:1.1em;height:1.1em}
+.feedback{border-radius:var(--r-md);padding:.7em 1em;margin-top:12px;font-size:.95em}
+.feedback.ok{background:var(--ok-soft);color:#14573A}
+.feedback.bad{background:var(--bad-soft);color:#7A231F}
+
+/* P1 match */
+.words{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:0 calc(-1 * clamp(14px,2.5vw,36px)) 16px;padding:10px clamp(14px,2.5vw,36px);position:sticky;top:0;z-index:5;background:var(--paper)}
+.word{font-family:var(--en);font-weight:700;font-size:1.25em;background:var(--card);border:3px solid var(--line);border-radius:var(--r-md);padding:.4em .9em;color:var(--navy);box-shadow:0 4px 0 var(--line)}
+.word.sel{border-color:var(--teal);background:#E2F4F8;box-shadow:0 4px 0 var(--teal)}
+.word.used{opacity:.25;pointer-events:none}
+.pics{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(180px,42vw),1fr));gap:14px}
+.pic{background:var(--card);border-radius:var(--r-lg);padding:10px;border:3px solid var(--line);display:flex;flex-direction:column;align-items:stretch;gap:6px;position:relative}
+.pic svg{width:100%;height:auto;display:block;border-radius:14px}
+.pic .tag{position:absolute;top:10px;left:10px;background:var(--navy);color:#fff;border-radius:8px;padding:0 .45em;font-weight:700;font-size:.8em}
+.pic .ans{min-height:2.4em;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--en);font-weight:700;color:var(--ok);text-align:center;line-height:1.15}
+.pic .ans small{font-family:var(--font);color:var(--muted);font-weight:400;font-size:.8em}
+.pic.done{border-color:var(--ok);background:var(--ok-soft)}
+.pic.ready{border-style:dashed;border-color:var(--teal)}
+.shake{animation:shake .4s}
+@keyframes shake{20%,60%{transform:translateX(-7px)}40%,80%{transform:translateX(7px)}}
+.flashbad{border-color:var(--bad)!important;background:var(--bad-soft)!important}
+
+/* P2 label */
+.textcard{background:var(--card);border-radius:var(--r-lg);padding:clamp(14px,2vw,26px);border:2px solid var(--line)}
+.textcard h3{font-family:var(--en);margin:0 0 .6em;color:var(--navy);display:flex;align-items:center;gap:.5em}
+.srow{display:grid;grid-template-columns:auto 1fr auto;gap:10px 14px;align-items:center;padding:.55em 0;border-top:1px dashed var(--line)}
+.srow:first-of-type{border-top:0}
+.sent{font-family:var(--en);font-size:1.2em;font-weight:600}
+.lab{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.lab button{border:3px solid var(--line);border-radius:var(--r-sm);padding:.3em .7em;font-weight:700;font-size:.85em;background:#fff}
+.lab button[aria-pressed="true"].i{background:var(--sun);border-color:var(--sun);color:#3E2A00}
+.lab button[aria-pressed="true"].d{background:var(--sky);border-color:var(--sky);color:var(--navy)}
+.srow .mark{grid-column:2 / 4;font-size:.85em}
+.srow.ok .mark{color:var(--ok)}
+.srow.bad .mark{color:var(--bad)}
+.srow.ok .sent{color:var(--ok)}
+.srow.bad .sent{color:var(--bad)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.85em;margin-bottom:12px}
+.legend span{display:inline-flex;gap:.4em;align-items:center}
+.legend i{width:1em;height:1em;border-radius:4px;display:inline-block}
+
+/* P3 build */
+.build{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.zone{background:var(--card);border-radius:var(--r-lg);padding:14px;border:2px solid var(--line);min-height:200px}
+.zone h4{margin:0 0 .5em;color:var(--navy);font-size:.95em}
+.slot{display:flex;gap:10px;align-items:center;border:3px dashed var(--line);border-radius:var(--r-md);padding:.5em .7em;margin-bottom:8px;min-height:3.1em}
+.slot b{display:inline-grid;place-items:center;width:1.8em;height:1.8em;border-radius:50%;background:var(--paper);color:var(--navy);flex:none}
+.slot.first b{background:var(--sun);color:#3E2A00}
+.slot .stext{font-family:var(--en);font-weight:600;font-size:1.1em;flex:1}
+.slot.filled{border-style:solid;border-color:var(--teal);cursor:pointer}
+.slot.ok{border-color:var(--ok);background:var(--ok-soft)}
+.slot.bad{border-color:var(--bad);background:var(--bad-soft)}
+.pool .piece{display:block;width:100%;text-align:left;font-family:var(--en);font-weight:600;font-size:1.1em;background:var(--paper);border:3px solid var(--line);border-radius:var(--r-md);padding:.55em .8em;margin-bottom:8px;box-shadow:0 3px 0 var(--line)}
+.pool .piece:hover{border-color:var(--teal)}
+.hint{color:var(--muted);font-size:.82em;margin:.2em 0 .6em}
+
+/* P4 / P5 quiz */
+.qcard{background:var(--card);border-radius:var(--r-lg);padding:clamp(16px,2.4vw,32px);border:2px solid var(--line)}
+.qnum{color:var(--teal);font-weight:700;font-size:.85em}
+.qtext{font-family:var(--en);font-size:clamp(24px,2.6vw,42px);font-weight:700;color:var(--navy);margin:.2em 0 .1em;line-height:1.2}
+.qtext .gap{display:inline-block;min-width:3.2em;border-bottom:4px solid var(--teal);text-align:center;color:var(--teal)}
+.qclue{color:var(--muted);font-size:.9em;margin:0 0 .6em}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:12px;margin-top:14px}
+.opt{font-family:var(--en);font-weight:700;font-size:1.25em;background:var(--paper);border:3px solid var(--line);border-radius:var(--r-md);padding:.7em .8em;color:var(--navy);box-shadow:0 4px 0 var(--line);text-align:center}
+.opt:hover{border-color:var(--teal)}
+.opt.long{font-size:1.05em;text-align:left}
+.opt.right{background:var(--ok-soft);border-color:var(--ok);color:#14573A}
+.opt.wrong{background:var(--bad-soft);border-color:var(--bad);color:#7A231F}
+.opt[disabled]{cursor:default}
+
+/* P5 */
+.steps{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.steps button{background:var(--card);border:2px solid var(--line);border-radius:999px;padding:.4em 1em;font-weight:700;color:var(--muted)}
+.steps button[aria-current="step"]{border-color:var(--teal);color:var(--teal-dark);background:#E2F4F8}
+.chars{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:12px;margin:10px 0}
+.charc{background:var(--paper);border:3px solid var(--line);border-radius:var(--r-lg);padding:10px;text-align:left;display:flex;flex-direction:column;justify-content:flex-start}
+.charc[aria-pressed="true"]{border-color:var(--teal);background:#E2F4F8}
+.charc svg{width:100%;height:auto;border-radius:12px;display:block}
+.charc strong{display:block;font-family:var(--en);color:var(--navy);margin-top:6px}
+.kw{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.kw span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:.1em .6em;font-family:var(--en);font-size:.85em}
+.frames{background:var(--sun-soft);border-radius:var(--r-md);padding:.7em 1em;margin-top:10px;font-family:var(--en)}
+.frames p{margin:.15em 0}
+.frames em{font-family:var(--font);color:var(--muted);font-size:.85em;font-style:normal}
+.rec{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:14px 0}
+.recbtn{width:5.2em;height:5.2em;border-radius:50%;background:var(--rose);color:#fff;font-weight:700;box-shadow:0 5px 0 #8E2A47;display:grid;place-items:center;text-align:center;line-height:1.1;font-size:.9em}
+.recbtn.on{background:var(--navy);box-shadow:0 5px 0 #071826;animation:pulse 1.2s infinite}
+@keyframes pulse{50%{transform:scale(1.05)}}
+.rectime{font-size:1.8em;font-weight:700;font-variant-numeric:tabular-nums;color:var(--navy)}
+.checks label{display:flex;gap:.7em;align-items:flex-start;background:var(--paper);border-radius:var(--r-md);padding:.6em .8em;margin-bottom:8px;cursor:pointer;border:2px solid transparent}
+.checks input{width:1.4em;height:1.4em;flex:none;margin-top:.1em;accent-color:var(--teal)}
+.checks label:has(input:checked){border-color:var(--ok);background:var(--ok-soft)}
+
+/* results */
+.result{background:var(--card);border-radius:var(--r-lg);padding:clamp(20px,3vw,40px);text-align:center;border:2px solid var(--line)}
+.stars{font-size:clamp(40px,5vw,72px);letter-spacing:.1em;color:var(--sun);line-height:1}
+.stars .off{color:#D9E3E8}
+.result h3{font-size:clamp(24px,2.6vw,40px);margin:.3em 0 .1em;color:var(--navy)}
+.result p{margin:.3em auto;max-width:36em;color:var(--muted)}
+.result .actions{justify-content:center}
+
+.foot{color:var(--muted);font-size:.75em;text-align:center;padding:10px 0 24px}
+
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr}
+  .album{max-width:460px}
+  .path{grid-template-columns:repeat(2,1fr)}
+  .build{grid-template-columns:1fr}
+  .guide th{width:auto}
+}
+@media (max-width:560px){
+  .path{grid-template-columns:1fr}
+  .srow{grid-template-columns:auto 1fr}
+  .lab{grid-column:1 / 3;justify-content:flex-start}
+  .srow .mark{grid-column:1 / 3}
+  .guide table,.guide tbody,.guide tr,.guide th,.guide td{display:block}
+  .guide thead{display:none}
+  .guide th{border-top:2px solid var(--line);padding-bottom:0;font-size:1.05em}
+  .guide td{border-top:0;padding-top:.2em}
+  .guide td::before{content:attr(data-label);display:block;font-weight:700;color:var(--teal-dark);font-size:.9em}
+  .charc{display:grid;grid-template-columns:84px 1fr;gap:4px 12px;align-items:center}
+  .charc svg{grid-row:1 / 3}
+  .charc strong{margin-top:0}
+  .pics{gap:10px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ====== tambahan v2 ====== */
+.meet .exp{display:inline-block;align-self:flex-start;background:var(--sun-soft);color:#6B4700;border-radius:999px;padding:.1em .7em;font-size:.72em;font-weight:700}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tabs button{background:var(--card);border:2px solid var(--line);border-radius:999px;padding:.45em 1.1em;font-weight:700;color:var(--muted)}
+.tabs button[aria-selected="true"]{border-color:var(--teal);color:var(--teal-dark);background:#E2F4F8}
+
+/* P1 maker */
+.maker{display:grid;grid-template-columns:minmax(260px,1fr) 1.25fr;gap:18px;align-items:start}
+.mk-left{position:sticky;top:8px;display:flex;flex-direction:column;gap:12px}
+.stagecard{background:var(--card);border-radius:var(--r-lg);border:2px solid var(--line);padding:12px;display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center}
+.stagecard .fig{width:clamp(120px,15vw,210px);background:#E2F4F8;border-radius:16px;overflow:hidden}
+.stagecard .fig svg{display:block;width:100%;height:auto}
+.desc{list-style:none;margin:0;padding:0}
+.desc li{display:flex;gap:8px;align-items:flex-start;padding:.3em .4em;border-radius:10px;transition:background .3s}
+.desc li.flash{background:var(--sun-soft)}
+.desc .en{font-family:var(--en);font-weight:700;color:var(--navy);font-size:1.02em;line-height:1.25}
+.desc .id{display:block;font-style:italic;color:var(--muted);font-size:.78em;font-weight:400}
+.desc .say{width:1.8em;height:1.8em}
+.groups{display:flex;flex-direction:column;gap:12px}
+.grp{background:var(--card);border-radius:var(--r-md);border:2px solid var(--line);padding:10px 12px}
+.grp h4{margin:0 0 .45em;font-size:.85em;color:var(--teal-dark)}
+.optrow{display:flex;flex-wrap:wrap;gap:8px}
+.ob{display:flex;align-items:center;gap:.5em;background:var(--paper);border:3px solid var(--line);border-radius:var(--r-md);padding:.35em .7em;min-height:2.9em}
+.ob[aria-pressed="true"]{border-color:var(--teal);background:#E2F4F8}
+.ob .ic{width:2.2em;height:2.2em;flex:none;display:block}
+.ob .ic svg{width:100%;height:100%;display:block}
+.ob .w{font-family:var(--en);font-weight:700;color:var(--navy);line-height:1.1}
+.ob .w small{display:block;font-family:var(--font);color:var(--muted);font-weight:400;font-size:.72em}
+.ob.iconly{padding:.35em}
+.ob.iconly .ic{width:2.8em;height:2.8em}
+.sw{width:2.1em;height:2.1em;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--line)}
+.sw[aria-pressed="true"]{box-shadow:0 0 0 3px var(--teal)}
+.namein{font:inherit;font-family:var(--en);font-weight:700;color:var(--navy);border:3px solid var(--line);border-radius:var(--r-md);padding:.35em .7em;width:9em;background:var(--paper)}
+.namein:focus{outline:none;border-color:var(--teal)}
+.saved{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.saved .sv{position:relative;width:86px;background:var(--card);border:2px solid var(--line);border-radius:12px;padding:4px;text-align:center;font-family:var(--en);font-weight:700;font-size:.75em;color:var(--navy)}
+.saved .sv svg{width:100%;height:auto;display:block;background:#E2F4F8;border-radius:8px}
+.saved .x{position:absolute;top:-8px;right:-8px;width:1.6em;height:1.6em;border-radius:50%;background:var(--bad);color:#fff;font-weight:700;line-height:1}
+.chal{background:var(--card);border-radius:var(--r-lg);border:2px dashed var(--teal);padding:12px 14px}
+.chal .big{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.chal p{margin:.3em 0}
+.chal .txt{font-family:var(--en);font-weight:700;color:var(--navy);font-size:1.1em}
+.btn.sm{padding:.45em 1em;font-size:.9em}
+
+/* kartu tokoh (grid) */
+.cast{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.cc{position:relative;background:var(--card);border:3px solid var(--line);border-radius:16px;padding:4px 4px 2px;text-align:center}
+.cc svg{display:block;width:100%;height:auto;background:#E2F4F8;border-radius:12px}
+.cc b{display:block;font-family:var(--en);color:var(--navy);font-size:.9em;padding:2px 0}
+.cc.out{opacity:.35;filter:grayscale(1)}
+.cc.out::after{content:"";position:absolute;inset:10% 12%;background:linear-gradient(45deg,transparent 46%,var(--bad) 46%,var(--bad) 54%,transparent 54%),linear-gradient(-45deg,transparent 46%,var(--bad) 46%,var(--bad) 54%,transparent 54%)}
+.cast.guess .cc:not(.out){border-color:var(--sun);box-shadow:0 0 0 3px var(--sun-soft)}
+.cc.win{border-color:var(--ok);box-shadow:0 0 0 4px var(--ok-soft);opacity:1;filter:none}
+.cc.miss{border-color:var(--bad)}
+.legend2{display:flex;gap:6px 14px;flex-wrap:wrap;font-size:.8em;color:var(--muted);margin:8px 0 0}
+.legend2 span{display:inline-flex;align-items:center;gap:.35em}
+.legend2 svg{width:1.6em;height:1.6em}
+.legend2 b{font-family:var(--en);color:var(--navy)}
+
+/* P2 detektif */
+.det{display:grid;grid-template-columns:minmax(240px,0.9fr) 2fr;gap:16px;align-items:start}
+.clues{background:var(--card);border:2px solid var(--line);border-radius:var(--r-lg);padding:12px 14px;position:sticky;top:8px}
+.clues h4{margin:0 0 .4em;color:var(--navy)}
+.clues ol{margin:0;padding:0;list-style:none}
+.clues li{display:flex;gap:8px;align-items:center;font-family:var(--en);font-weight:700;color:var(--navy);font-size:1.1em;padding:.35em 0;border-top:1px dashed var(--line)}
+.clues li:first-child{border-top:0}
+.clues li .n{display:inline-grid;place-items:center;width:1.7em;height:1.7em;border-radius:50%;background:var(--sky);color:var(--navy);font-size:.75em;flex:none}
+.clues li.new{animation:pop .35s}
+@keyframes pop{0%{transform:scale(.96);background:var(--sun-soft)}100%{transform:none}}
+.clues li.lock{color:#9DB3BC;font-weight:400;font-style:italic}
+.pts{font-size:.85em;color:var(--muted);margin:.5em 0}
+.pts b{color:var(--teal-dark);font-size:1.2em}
+.kw{color:var(--teal-dark);text-decoration:underline;text-decoration-thickness:3px;text-decoration-color:var(--sun);text-underline-offset:3px}
+
+/* P3 robot */
+.fix{display:grid;grid-template-columns:minmax(200px,.7fr) 2fr;gap:16px;align-items:start}
+.pcard{background:var(--card);border:2px solid var(--line);border-radius:var(--r-lg);padding:10px;text-align:center;position:sticky;top:8px}
+.pcard > svg{width:100%;height:auto;display:block;background:#E2F4F8;border-radius:14px}
+.pcard .legend2{justify-content:center}
+.pcard b{font-family:var(--en);color:var(--navy);display:block;margin-top:4px}
+.robo{display:flex;gap:12px;align-items:center;margin-bottom:10px}
+.robo > svg{width:clamp(64px,7vw,96px);height:auto;flex:none}
+.bubble .say{vertical-align:middle;margin-left:.3em}
+.bubble{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:.6em .9em;position:relative;font-size:.92em}
+.bubble::before{content:"";position:absolute;left:-12px;top:50%;margin-top:-10px;border:10px solid transparent;border-right-color:var(--line)}
+.bubble::after{content:"";position:absolute;left:-8px;top:50%;margin-top:-8px;border:8px solid transparent;border-right-color:var(--card)}
+.rtext{background:var(--card);border:2px solid var(--line);border-radius:var(--r-lg);padding:8px 12px}
+.rl{border-top:1px dashed var(--line);padding:.45em 0}
+.rl:first-child{border-top:0}
+.rl > button.line{display:flex;gap:10px;align-items:center;width:100%;text-align:left;padding:.35em .4em;border-radius:10px}
+.rl > button.line:hover{background:var(--paper)}
+.rl .no{display:inline-grid;place-items:center;width:1.8em;height:1.8em;border-radius:50%;background:var(--paper);color:var(--navy);font-weight:700;flex:none}
+.rl .tx{font-family:var(--en);font-weight:700;font-size:1.15em;color:var(--navy)}
+.rl.fixed .tx{color:var(--ok)}
+.rl.fixed .no{background:var(--ok);color:#fff}
+.rl.checked .no{background:var(--sky)}
+.rl .old{display:block;font-size:.75em;color:var(--bad);text-decoration:line-through;font-weight:400}
+.rl .choices{display:flex;flex-wrap:wrap;gap:8px;padding:.4em 0 .2em 2.6em}
+.rl .choices button{font-family:var(--en);font-weight:700;background:var(--paper);border:3px solid var(--line);border-radius:var(--r-md);padding:.4em .8em;color:var(--navy)}
+.rl .choices button.keep{font-family:var(--font)}
+.rl .why{padding:.2em 0 .1em 2.6em;font-size:.85em}
+.rl .why.ok{color:var(--ok)}
+.rl .why.bad{color:var(--bad)}
+.counter{display:flex;gap:6px;align-items:center;font-weight:700;color:var(--navy);margin:10px 0}
+.counter i{width:1.1em;height:1.1em;border-radius:50%;background:#D9E3E8;display:inline-block}
+.counter i.on{background:var(--ok)}
+
+/* P4 draw */
+.draw{display:grid;grid-template-columns:minmax(260px,1fr) 1.4fr;gap:16px;align-items:start}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:sticky;top:8px}
+.pair .pc{background:var(--card);border:2px solid var(--line);border-radius:var(--r-lg);padding:8px;text-align:center}
+.pair .pc svg{width:100%;height:auto;display:block;background:#E2F4F8;border-radius:12px}
+.pair .pc h5{margin:0 0 4px;font-size:.78em;color:var(--teal-dark)}
+.pair .pc b{font-family:var(--en);color:var(--navy);display:block;min-height:1.3em}
+.cmp{grid-column:1 / 3;background:var(--card);border:2px solid var(--line);border-radius:var(--r-lg);padding:8px 12px;font-size:.82em}
+.cmp div{display:flex;gap:8px;padding:.18em 0;align-items:baseline}
+.cmp .st{flex:none;width:1.3em;text-align:center;font-weight:700}
+.cmp .ok{color:var(--ok)} .cmp .bad{color:var(--bad)} .cmp .wait{color:#9DB3BC}
+.mytext{background:var(--card);border:2px solid var(--line);border-radius:var(--r-lg);padding:10px 14px;margin-bottom:12px}
+.mytext h4{margin:0 0 .3em;color:var(--navy);font-size:.9em;display:flex;align-items:center;gap:.5em}
+.mytext ol{margin:0;padding-left:1.4em;font-family:var(--en);font-weight:700;color:var(--navy)}
+.mytext li{padding:.1em 0}
+.mytext .empty{color:var(--muted);font-size:.85em;margin:0}
+.line-build{display:flex;flex-wrap:wrap;gap:6px;align-items:center;min-height:3.4em;background:var(--card);border:3px dashed var(--teal);border-radius:var(--r-md);padding:8px 10px}
+.line-build .tk{font-family:var(--en);font-weight:700;background:#E2F4F8;border:2px solid var(--teal);border-radius:10px;padding:.2em .6em;color:var(--navy)}
+.line-build .ph{color:var(--muted);font-size:.85em}
+.bank{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.bank .row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.bank .row span.lbl{font-size:.72em;color:var(--muted);width:5.2em;flex:none}
+.tile{font-family:var(--en);font-weight:700;background:var(--card);border:2px solid var(--line);border-radius:10px;padding:.35em .65em;color:var(--navy);box-shadow:0 3px 0 var(--line)}
+.tile:active{transform:translateY(2px);box-shadow:0 1px 0 var(--line)}
+.robomsg{margin-top:10px}
+
+/* P5 battle */
+.bt{display:grid;grid-template-columns:minmax(250px,.9fr) 2fr;gap:16px;align-items:start}
+.ctrl{background:var(--card);border:2px solid var(--line);border-radius:var(--r-lg);padding:14px;position:sticky;top:8px}
+.ctrl h4{margin:0 0 .4em;color:var(--navy)}
+.ctrl .rule{background:var(--sun-soft);border-radius:var(--r-md);padding:.55em .8em;font-size:.85em;margin:.6em 0}
+.timer{font-size:clamp(40px,5vw,72px);font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums;line-height:1;margin:.15em 0}
+.timer.low{color:var(--bad)}
+.tick{display:flex;gap:.6em;align-items:flex-start;background:var(--paper);border-radius:var(--r-md);padding:.5em .7em;margin:.4em 0;cursor:pointer;font-size:.88em}
+.tick input{width:1.3em;height:1.3em;accent-color:var(--teal);flex:none;margin-top:.1em}
+.overlay{position:fixed;inset:0;background:rgba(18,50,75,.92);z-index:50;display:grid;place-items:center;padding:16px}
+.overlay .sheet{background:var(--card);border-radius:24px;padding:16px;max-width:min(420px,92vw);width:100%;text-align:center}
+.overlay .sheet svg{width:min(240px,60vw);height:auto;background:#E2F4F8;border-radius:16px}
+.overlay .sheet h3{font-family:var(--en);color:var(--navy);margin:.2em 0}
+.overlay .sheet p{margin:.2em 0;color:var(--muted);font-size:.9em}
+.model{background:var(--ok-soft);border-radius:var(--r-md);padding:.7em 1em;margin-top:10px}
+.model p{margin:.15em 0;font-family:var(--en);font-weight:700;color:#14573A}
+
+@media (max-width:900px){
+  .maker,.det,.fix,.draw,.bt{grid-template-columns:1fr}
+  .mk-left,.clues,.pcard,.pair,.ctrl{position:static}
+  .cast{grid-template-columns:repeat(4,1fr)}
+  .pcard{display:grid;grid-template-columns:110px 1fr;align-items:center;text-align:left;gap:10px}
+  .pcard .legend2{justify-content:flex-start}
+}
+@media (max-width:560px){
+  .cast{grid-template-columns:repeat(3,1fr);gap:6px}
+  .cc b{font-size:.78em}
+  .mk-left{display:contents}
+  .maker{gap:10px}
+  .stagecard{position:sticky;top:0;z-index:6;box-shadow:0 6px 12px rgba(18,50,75,.15)}
+  .stagecard{grid-template-columns:96px 1fr;padding:8px;gap:8px}
+  .stagecard .fig{width:96px}
+  .desc .en{font-size:.88em}
+  .desc .id{font-size:.72em}
+  .desc li{padding:.15em .3em}
+  .bank .row span.lbl{width:100%}
+}
+
+/* ====== v3: kesiapan PID/IFP ====== */
+html,body{overflow-x:hidden}
+/* target sentuh dasar (semua layar) */
+.chipbtn{min-height:44px}
+.back{min-height:48px;min-width:48px}
+.say{width:2.3em;height:2.3em;min-width:44px;min-height:44px}
+.desc .say{width:2em;height:2em;min-width:40px;min-height:40px}
+.ob{min-height:3em}
+.tile{min-height:2.5em;min-width:2.6em}
+.rl .choices button{min-height:2.6em}
+.tick input,.checks input{width:1.6em;height:1.6em}
+.tabs button{min-height:2.6em}
+.sw{width:2.4em;height:2.4em}
+.btn{min-height:2.8em}
+.names .ob{min-height:2.5em}
+.names .ob.on,.names .ob[aria-pressed="true"]{border-color:var(--teal);background:#E2F4F8}
+.formatif{font-size:.8em;color:var(--muted);border-top:1px dashed var(--line);padding-top:.6em;margin-top:1em!important}
+
+/* papan skor melayang (mode beregu) */
+.floatboard{position:fixed;top:10px;right:10px;z-index:40;display:flex;gap:6px;align-items:center;background:rgba(255,255,255,.96);border:2px solid var(--line);border-radius:18px;padding:6px 8px;box-shadow:0 6px 18px rgba(18,50,75,.18);pointer-events:none;opacity:0;transform:translateY(-8px);transition:opacity .2s,transform .2s}
+.floatboard.show{opacity:1;transform:none}
+.floatboard .team{padding:.2em .6em;font-size:.9em}
+.floatboard .turn{font-size:.8em}
+
+/* pesan singkat */
+.toast{position:fixed;left:50%;bottom:20px;transform:translate(-50%,20px);z-index:60;background:var(--navy);color:#fff;border-radius:16px;padding:.7em 1.1em;max-width:min(640px,92vw);font-size:.9em;box-shadow:0 8px 24px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ====== layar besar: PID/IFP 1920 ke atas ====== */
+/* juga berlaku untuk layar sentuh besar (PID/IFP) yang dijalankan dengan skala tampilan tinggi */
+@media (min-width:1800px), (pointer:coarse) and (min-width:1400px){
+  body{font-size:26px}
+  .wrap{max-width:1720px}
+  .bar .wrap{min-height:84px}
+  .bar h1{font-size:1.15em}
+  .chipbtn{min-height:60px;padding:.4em 1.2em;font-size:.85em}
+  .back{min-height:64px;padding:.4em 1.3em}
+  .say{min-width:64px;min-height:64px}
+  .desc .say{min-width:56px;min-height:56px}
+  .btn{min-height:64px;padding:.6em 1.5em}
+  .btn.sm{min-height:60px}
+  .ob{min-height:72px;padding:.4em .9em}
+  .ob.iconly .ic{width:3.2em;height:3.2em}
+  .tile{min-height:64px;min-width:64px;font-size:1.05em}
+  .tabs button{min-height:64px}
+  .rl .choices button{min-height:64px}
+  .rl > button.line{min-height:64px}
+  .tick,.checks label{min-height:64px;align-items:center}
+  .tick input,.checks input{width:36px;height:36px}
+  .sw{width:56px;height:56px}
+  .namein{min-height:60px}
+  .toggle button{min-height:56px}
+  .hero h2{font-size:80px}
+  .ghead h2{font-size:46px}
+  .team{padding:.4em 1em}
+  .team .s{font-size:1.6em}
+  .task{font-size:1.08em}
+  .feedback{font-size:1em}
+  .stagecard .fig{width:270px}
+  .det,.bt{grid-template-columns:minmax(380px,.9fr) 2fr}
+  .fix{grid-template-columns:minmax(300px,.7fr) 2fr}
+  .cast{gap:16px}
+  .cc b{font-size:1em}
+  .robo > svg{width:120px}
+  .timer{font-size:110px}
+  .overlay .sheet{max-width:560px}
+  .overlay .sheet svg{width:320px}
+  .floatboard{top:16px;right:16px}
+}
+/* 4K pada skala 100%: perbesar seluruh tata letak secara merata */
+@media (min-width:2600px){ html{zoom:1.4} }
+@media (min-width:3400px){ html{zoom:2} }
+
+/* ====== v3 7.4 — tombol putar & penghitung ====== */
+.chal .big{align-items:center}
+.playbtn.playing{background:var(--rose);border-color:var(--rose);box-shadow:0 4px 0 #9B3352}
+.plays{font-size:.85em;font-weight:700;color:var(--teal-dark);background:#E2F4F8;border-radius:999px;padding:.2em .8em}
+.bubble .say{vertical-align:middle;margin-right:.3em}
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <h1>Media Pembelajaran Interaktif (MPI)<small>Bahasa Inggris Kelas VII · TP 7.4 My Family / My Friends and I</small></h1>
+    <button class="chipbtn" id="soundBtn" aria-pressed="true" title="Suara efek & pelafalan">Suara aktif</button>
+    <button class="chipbtn" id="speedBtn" title="Kecepatan suara bahasa Inggris">Kecepatan: Pelan</button>
+    <button class="chipbtn" id="fsBtn" title="Layar penuh">Layar penuh</button>
+  </div>
+</header>
+<main id="app"></main>
+<div id="floatBoard" class="floatboard" aria-hidden="true"></div>
+<p class="foot">MPI TP 7.4 · Bersifat formatif dan opsional (±5–10 menit, menggantikan sebagian latihan). Bukan alat penilaian sumatif. Berjalan tanpa internet.</p>
+<script>
+(function(){
+"use strict";
+/* ===== MESIN TOKOH (tubuh penuh) ===== */
+const SKIN = ['#F1C9A5','#D9A47A','#B97F56','#8D5A3B'];
+const HAIRC = { black:'#1E1611', brown:'#8A5A2B', white:'#E4E7EA' };
+const EYEC = { brown:'#7A4A22', black:'#151515' };
+function chibi(t, opt){
+  t = t || {}; opt = opt || {};
+  const unknown = !!opt.unknown;
+  const skin = unknown ? '#C9D6DD' : SKIN[t.skin==null?1:t.skin];
+  const shirt = unknown ? '#9DB3BC' : (t.shirt || '#0E7490');
+  const pants = unknown ? '#81979F' : '#12324B';
+  const H = t.h==='tall' ? 132 : t.h==='short' ? 90 : 111;
+  const R = 17, cx = 60, floor = 152;
+  const top = floor - H, cy = top + R;
+  const bodyTop = cy + R - 3;
+  const legLen = Math.max(18, (H - 2*R) * 0.38);
+  const bodyBot = floor - legLen;
+  const hc = t.hc ? HAIRC[t.hc] : '#1E1611';
+  const hcStroke = t.hc==='white' ? ' stroke="#A9B2B8" stroke-width="1"' : '';
+  const bg = opt.bg || 'transparent';
+  let s = `<svg viewBox="0 0 120 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">`;
+  if(bg!=='transparent') s += `<rect width="120" height="160" fill="${bg}"/>`;
+  if(opt.ref!==false){
+    s += `<line x1="4" x2="116" y1="${floor-111}" y2="${floor-111}" stroke="#9DB3BC" stroke-width="1.2" stroke-dasharray="4 4"/>`;
+  }
+  s += `<rect x="0" y="${floor}" width="120" height="8" fill="#C9D6DD"/>`;
+  // rambut belakang (panjang)
+  if(t.hair==='long' && !unknown){
+    s += `<path d="M${cx-R-1} ${cy} Q${cx-R-2} ${cy-R-3} ${cx} ${cy-R-3} Q${cx+R+2} ${cy-R-3} ${cx+R+1} ${cy} L${cx+R+5} ${bodyTop+22} Q${cx} ${bodyTop+28} ${cx-R-5} ${bodyTop+22} Z" fill="${hc}"${hcStroke}/>`;
+  }
+  // kaki
+  s += `<rect x="47" y="${bodyBot-4}" width="10" height="${floor-bodyBot+4}" rx="4" fill="${pants}"/><rect x="63" y="${bodyBot-4}" width="10" height="${floor-bodyBot+4}" rx="4" fill="${pants}"/>`;
+  // badan
+  s += `<rect x="43" y="${bodyTop}" width="34" height="${bodyBot-bodyTop}" rx="10" fill="${shirt}"/>`;
+  // lengan + pose sifat
+  const midY = bodyTop + (bodyBot-bodyTop)*0.55;
+  const handY = bodyTop + (bodyBot-bodyTop)*0.9;
+  const arm = (x1,y1,x2,y2)=>`<path d="M${x1} ${y1} L${x2} ${y2}" stroke="${skin}" stroke-width="7" stroke-linecap="round"/>`;
+  const pose = unknown ? null : t.s;
+  if(pose==='friendly'){
+    s += arm(45, bodyTop+6, 37, handY);
+    s += arm(75, bodyTop+6, 90, cy-6);
+    s += `<g><rect x="90" y="${Math.max(2,cy-34)}" width="26" height="17" rx="7" fill="#fff" stroke="#12324B" stroke-width="1.6"/><text x="103" y="${Math.max(2,cy-34)+12.5}" text-anchor="middle" font-family="Arial" font-weight="700" font-size="10" fill="#12324B">Hi!</text></g>`;
+  } else if(pose==='kind'){
+    s += arm(45, bodyTop+6, 56, midY);
+    s += arm(75, bodyTop+6, 64, midY);
+    s += `<path d="M66 ${midY-6} C66 ${midY-11} 60 ${midY-12} 60 ${midY-7} C60 ${midY-12} 54 ${midY-11} 54 ${midY-6} C54 ${midY-1} 60 ${midY+3} 60 ${midY+5} C60 ${midY+3} 66 ${midY-1} 66 ${midY-6}Z" fill="#E5677F" stroke="#fff" stroke-width="1.2"/>`;
+  } else if(pose==='smart'){
+    s += arm(45, bodyTop+6, 54, midY+2);
+    s += arm(75, bodyTop+6, 66, midY+2);
+    s += `<g><rect x="47" y="${midY-6}" width="26" height="17" rx="2" fill="#2E5E9E"/><line x1="60" y1="${midY-6}" x2="60" y2="${midY+11}" stroke="#fff" stroke-width="1.4"/><rect x="49" y="${midY-4}" width="9" height="13" fill="#F7F3E8"/><rect x="62" y="${midY-4}" width="9" height="13" fill="#F7F3E8"/></g>`;
+  } else {
+    s += arm(45, bodyTop+6, 37, handY);
+    s += arm(75, bodyTop+6, 83, handY);
+  }
+  // leher, telinga, kepala
+  s += `<rect x="55" y="${cy+R-6}" width="10" height="8" rx="3" fill="${skin}"/>`;
+  s += `<circle cx="${cx-R+1}" cy="${cy+2}" r="4" fill="${skin}"/><circle cx="${cx+R-1}" cy="${cy+2}" r="4" fill="${skin}"/>`;
+  s += `<circle cx="${cx}" cy="${cy}" r="${R}" fill="${skin}"/>`;
+  // rambut atas
+  if(!unknown && t.hair){
+    if(t.hair==='curly'){
+      for(let a=180;a<=360;a+=20){ const r=(a*Math.PI)/180; s += `<circle cx="${(cx+(R+1)*Math.cos(r)).toFixed(1)}" cy="${(cy-2+(R+1)*Math.sin(r)).toFixed(1)}" r="6.6" fill="${hc}"${hcStroke}/>`; }
+      s += `<path d="M${cx-R+1} ${cy-2} Q${cx} ${cy-R-6} ${cx+R-1} ${cy-2} Q${cx} ${cy-R*0.55} ${cx-R+1} ${cy-2}Z" fill="${hc}"/>`;
+    } else {
+      const bang = t.hair==='long' ? 0.5 : 0.42;
+      s += `<path d="M${cx-R} ${cy+2} Q${cx-R-1} ${cy-R-3} ${cx} ${cy-R-3} Q${cx+R+1} ${cy-R-3} ${cx+R} ${cy+2} Q${cx+R-3} ${cy-R*bang} ${cx+4} ${cy-R*bang-1} Q${cx-R+5} ${cy-R*bang} ${cx-R} ${cy+2}Z" fill="${hc}"${hcStroke}/>`;
+    }
+    if(t.g==='she' && t.hair==='short'){
+      s += `<g transform="translate(${cx+R-6} ${cy-R+4})"><circle r="3.2" fill="#F2B33D"/><circle cx="-3" r="2.4" fill="#F2B33D"/><circle cx="3" r="2.4" fill="#F2B33D"/><circle r="1.6" fill="#C8466A"/></g>`;
+    }
+  }
+  if(unknown){
+    s += `<text x="${cx}" y="${cy+7}" text-anchor="middle" font-family="Arial" font-weight="700" font-size="20" fill="#fff">?</text>`;
+  } else {
+    // mata
+    const ec = t.eyes ? EYEC[t.eyes] : '#3A3A3A';
+    s += `<circle cx="${cx-6.5}" cy="${cy+1}" r="3.8" fill="#fff"/><circle cx="${cx+6.5}" cy="${cy+1}" r="3.8" fill="#fff"/>`;
+    s += `<circle cx="${cx-6.5}" cy="${cy+1.4}" r="2.6" fill="${ec}"/><circle cx="${cx+6.5}" cy="${cy+1.4}" r="2.6" fill="${ec}"/>`;
+    s += `<circle cx="${cx-5.7}" cy="${cy+0.4}" r=".8" fill="#fff"/><circle cx="${cx+7.3}" cy="${cy+0.4}" r=".8" fill="#fff"/>`;
+    s += `<circle cx="${cx-11}" cy="${cy+7}" r="3" fill="#E8826F" opacity=".3"/><circle cx="${cx+11}" cy="${cy+7}" r="3" fill="#E8826F" opacity=".3"/>`;
+    if(pose==='funny'){
+      s += `<path d="M${cx-6} ${cy+7} Q${cx} ${cy+16} ${cx+6} ${cy+7}Z" fill="#7A2E2E"/>`;
+      s += `<text x="${cx+R+4}" y="${cy-8}" font-family="Arial" font-weight="700" font-size="10" fill="#C8466A">ha ha!</text>`;
+    } else {
+      s += `<path d="M${cx-5} ${cy+8} Q${cx} ${cy+12} ${cx+5} ${cy+8}" stroke="#7A3B2E" stroke-width="1.8" fill="none" stroke-linecap="round"/>`;
+    }
+  }
+  return s + `</svg>`;
+}
+/* 12 tokoh rekaan — kombinasi ciri unik */
+const CAST = [
+  {name:'Sari',  g:'she', h:'short', hair:'long',  hc:'black', eyes:'brown', s:'kind',     skin:1, shirt:'#C8466A'},
+  {name:'Dewi',  g:'she', h:'short', hair:'curly', hc:'black', eyes:'brown', s:'smart',    skin:2, shirt:'#7FD3E6'},
+  {name:'Rina',  g:'she', h:'tall',  hair:'long',  hc:'brown', eyes:'black', s:'friendly', skin:0, shirt:'#23885A'},
+  {name:'Lina',  g:'she', h:'tall',  hair:'short', hc:'black', eyes:'black', s:'funny',    skin:3, shirt:'#F2B33D'},
+  {name:'Maya',  g:'she', h:'short', hair:'long',  hc:'brown', eyes:'brown', s:'funny',    skin:1, shirt:'#0E7490'},
+  {name:'Tika',  g:'she', h:'tall',  hair:'curly', hc:'brown', eyes:'brown', s:'kind',     skin:2, shirt:'#12324B'},
+  {name:'Andi',  g:'he',  h:'tall',  hair:'short', hc:'black', eyes:'brown', s:'smart',    skin:2, shirt:'#0E7490'},
+  {name:'Rudi',  g:'he',  h:'short', hair:'curly', hc:'black', eyes:'black', s:'funny',    skin:3, shirt:'#F2B33D'},
+  {name:'Raka',  g:'he',  h:'tall',  hair:'curly', hc:'black', eyes:'brown', s:'friendly', skin:1, shirt:'#C8466A'},
+  {name:'Dimas', g:'he',  h:'short', hair:'short', hc:'brown', eyes:'black', s:'kind',     skin:0, shirt:'#23885A'},
+  {name:'Fajar', g:'he',  h:'tall',  hair:'short', hc:'brown', eyes:'brown', s:'funny',    skin:1, shirt:'#7FD3E6'},
+  {name:'Bayu',  g:'he',  h:'short', hair:'short', hc:'black', eyes:'brown', s:'friendly', skin:2, shirt:'#12324B'}
+];
+
+
+/* =========================================================
+   UTIL
+   ========================================================= */
+const $app = document.getElementById('app');
+const ONLINE = /^https?:$/.test(location.protocol);
+let installEvt = null;
+const store = {
+  get(k, d){ try{ const v = localStorage.getItem('mpi74_'+k); return v===null?d:JSON.parse(v);}catch(e){return d;} },
+  set(k, v){ try{ localStorage.setItem('mpi74_'+k, JSON.stringify(v)); }catch(e){} }
+};
+const S = { mode: store.get('mode','solo'), sound: store.get('sound', true), speed: store.get('speed', 'pelan') };
+function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
+function esc(s){ return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+const ICON_SAY = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4zm12.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>';
+
+/* ---- pelafalan (mesin suara v2) ----
+   Prinsip kelas:
+   1. Suara HANYA berbunyi bila tombol putar ditekan — tidak ada narasi otomatis.
+   2. Dibacakan kalimat demi kalimat dengan JEDA di antaranya; kecepatan dapat diatur guru
+      (Normal · Pelan · Sangat pelan). Bawaan: Pelan. */
+const canSpeak = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+const SPEEDS = {
+  normal: { rate: .92, gap: 350,  label: 'Normal' },
+  pelan:  { rate: .80, gap: 800,  label: 'Pelan' },
+  sangat: { rate: .70, gap: 1300, label: 'Sangat pelan' }
+};
+const SPEED_ORDER = ['pelan','sangat','normal'];
+let enVoice = null;
+const badVoices = new Set();
+/* pilih suara bahasa Inggris yang paling enak didengar: suara "Natural"/Google lebih alami daripada suara sistem lama */
+function pickVoice(){
+  if(!canSpeak) return;
+  const vs = speechSynthesis.getVoices().filter(v=>/^en([-_]|$)/i.test(v.lang) && !badVoices.has(v.name));
+  const score = v => (/natural/i.test(v.name)?6:0) + (/google/i.test(v.name)?4:0) + (/^en[-_](US|GB)/i.test(v.lang)?2:0) + (v.localService?1:0) - (/compact|espeak/i.test(v.name)?5:0);
+  enVoice = vs.sort((a,b)=>score(b)-score(a))[0] || null;
+}
+if(canSpeak){ pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
+let ttsFailed = false, onTtsFail = null;
+/* Suara siap dipakai? false bila: tidak didukung, dimatikan, pernah gagal, atau perangkat tidak punya suara bahasa Inggris */
+function ttsReady(){
+  if(!canSpeak || !S.sound || ttsFailed) return false;
+  try{ const vs = speechSynthesis.getVoices(); if(vs.length && !enVoice) return false; }catch(e){ return false; }
+  return true;
+}
+function splitSentences(text){
+  const parts = String(text).match(/[^.!?]+[.!?]+["”’)]*\s*|[^.!?]+$/g);
+  return (parts || [String(text)]).map(s=>s.trim()).filter(Boolean);
+}
+let speakToken = 0, nowPlaying = null;
+const playListeners = new Set();
+function notifyPlay(){ playListeners.forEach(fn=>{ try{ fn(nowPlaying); }catch(e){} }); }
+function stopSpeak(){
+  speakToken++;
+  if(canSpeak) try{ speechSynthesis.cancel(); }catch(e){}
+  if(nowPlaying !== null){ nowPlaying = null; notifyPlay(); }
+}
+/* speak(text, onend) — membaca per kalimat dengan jeda sesuai kecepatan */
+function speak(text, onend){
+  if(!S.sound || !canSpeak || ttsFailed) return false;
+  speakToken++; const token = speakToken;
+  try{ speechSynthesis.cancel(); }catch(e){}
+  const parts = splitSentences(text), sp = SPEEDS[S.speed] || SPEEDS.pelan;
+  nowPlaying = text; notifyPlay();
+  let i = 0;
+  const finishAll = ()=>{ if(token !== speakToken) return; nowPlaying = null; notifyPlay(); if(onend) onend(); };
+  const next = ()=>{
+    if(token !== speakToken) return;
+    if(i >= parts.length) return finishAll();
+    const line = parts[i++];
+    let done = false, guard = null;
+    const fin = ()=>{ if(done) return; done = true; clearTimeout(guard); if(token !== speakToken) return; if(i < parts.length) setTimeout(next, sp.gap); else finishAll(); };
+    try{
+      const u = new SpeechSynthesisUtterance(line);
+      u.lang = enVoice ? enVoice.lang : 'en-US'; if(enVoice) u.voice = enVoice; u.rate = sp.rate;
+      u.onend = fin;
+      u.onerror = ev=>{
+        if(ev && (ev.error==='interrupted' || ev.error==='canceled')){ done = true; clearTimeout(guard); return; }
+        done = true; clearTimeout(guard);
+        if(token !== speakToken) return;
+        /* suara daring (mis. "Natural") gagal saat offline → pindah ke suara lain, ulangi kalimat ini */
+        if(enVoice && !enVoice.localService && !badVoices.has(enVoice.name)){ badVoices.add(enVoice.name); pickVoice(); if(enVoice){ i--; next(); return; } }
+        ttsFailed = true; nowPlaying = null; notifyPlay();
+        toast('Suara perangkat tidak dapat dipakai. Teks ditampilkan — guru dapat membacakannya.'); if(onTtsFail) onTtsFail();
+      };
+      /* pengaman bila browser tidak mengirim onend */
+      guard = setTimeout(fin, 4000 + line.split(/\s+/).length * 900 / sp.rate);
+      speechSynthesis.speak(u);
+    }catch(e){ ttsFailed = true; nowPlaying = null; notifyPlay(); if(onTtsFail) onTtsFail(); }
+  };
+  next();
+  return true;
+}
+function sayBtn(text){ if(!canSpeak) return ''; return `<button class="say" data-say="${esc(text)}" aria-label="Dengar: ${esc(text)}" title="Dengar pelafalan">${ICON_SAY}</button>`; }
+document.addEventListener('click', e=>{ const b = e.target.closest('[data-say]'); if(b){ e.stopPropagation(); e.preventDefault();
+  if(!S.sound) toast('Suara sedang dimatikan. Tekan tombol “Suara mati” di atas untuk menyalakannya.');
+  else if(!ttsReady()) toast('Perangkat ini belum punya suara bahasa Inggris. Guru dapat membacakan kalimatnya.');
+  else { const t = b.getAttribute('data-say'); if(nowPlaying === t) stopSpeak(); else speak(t); } } }, true);
+
+/* ---- pesan singkat (toast) ---- */
+let toastTimer = null;
+function toast(msg){
+  let t = document.getElementById('toast');
+  if(!t){ t = document.createElement('div'); t.id='toast'; t.className='toast'; t.setAttribute('role','status'); t.setAttribute('aria-live','polite'); document.body.appendChild(t); }
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(toastTimer); toastTimer = setTimeout(()=>t.classList.remove('show'), 4200);
+}
+
+/* ---- efek suara ---- */
+let actx = null;
+function tone(freqs, dur, type){
+  if(!S.sound) return;
+  try{ actx = actx || new (window.AudioContext || window.webkitAudioContext)(); const t0 = actx.currentTime;
+    freqs.forEach((f,i)=>{ const o = actx.createOscillator(), g = actx.createGain(); o.type = type || 'sine'; o.frequency.value = f;
+      const st = t0 + i*dur*0.8; g.gain.setValueAtTime(0.0001, st); g.gain.exponentialRampToValueAtTime(0.18, st+0.02); g.gain.exponentialRampToValueAtTime(0.0001, st+dur);
+      o.connect(g); g.connect(actx.destination); o.start(st); o.stop(st+dur+0.02); });
+  }catch(e){}
+}
+const sfx = { ok(){ tone([660,880],0.16,'triangle'); }, bad(){ tone([220,180],0.18,'square'); }, win(){ tone([523,659,784,1046],0.18,'triangle'); }, tick(){ tone([520],0.06,'sine'); } };
+
+/* =========================================================
+   BAHASA: kalimat deskripsi dari ciri tokoh
+   ========================================================= */
+const ID = {
+  tall:'tinggi', short:'pendek', long:'panjang', curly:'keriting', black:'hitam', brown:'cokelat', white:'putih',
+  kind:'baik hati', friendly:'ramah', funny:'lucu', smart:'pandai', friend:'teman', sister:'saudara perempuan', brother:'saudara laki-laki'
+};
+const HAIRT = {short:'pendek', long:'panjang', curly:'keriting'};
+const Pr = t => t.g==='he' ? 'He' : 'She';
+const Po = t => t.g==='he' ? 'His' : 'Her';
+function sentences(t){
+  return [
+    { k:'ident', en:`This is my ${t.rel||'friend'}, ${t.name}.`, id:`Ini ${ID[t.rel||'friend']}ku, ${t.name}.` },
+    { k:'h',     en:`${Pr(t)} is ${t.h}.`, id:`Dia ${ID[t.h]}.` },
+    { k:'hair',  en:`${Pr(t)} has ${t.hair} ${t.hc} hair.`, id:`Dia punya rambut ${ID[t.hc]} ${HAIRT[t.hair]}.` },
+    { k:'eyes',  en:`${Po(t)} eyes are ${t.eyes}.`, id:`Matanya ${ID[t.eyes]}.` },
+    { k:'s',     en:`${Pr(t)} is ${t.s}.`, id:`Dia ${ID[t.s]}.` }
+  ];
+}
+const REL_OF = { friend:'friend', sister:'sister', brother:'brother' };
+const castBy = n => CAST.find(c=>c.name===n);
+const withRel = (c, rel) => Object.assign({}, c, {rel: rel || 'friend'});
+
+/* ---- ikon kecil untuk tombol pilihan ---- */
+function cropChibi(t, vb, opt){ return chibi(t, Object.assign({ref:false}, opt||{})).replace('viewBox="0 0 120 160"', `viewBox="${vb}"`); }
+const ICON = {
+  h(v){ const H = v==='tall'? 34 : 20; return `<svg viewBox="0 0 40 40"><line x1="2" x2="38" y1="10" y2="10" stroke="#9DB3BC" stroke-dasharray="3 3"/><rect x="0" y="37" width="40" height="3" fill="#C9D6DD"/><circle cx="20" cy="${37-H+4}" r="4" fill="#D9A47A"/><rect x="15" y="${37-H+8}" width="10" height="${H-8}" rx="3" fill="#0E7490"/></svg>`; },
+  hair(v){ return cropChibi({h:'short',hair:v,hc:'black',eyes:'brown',skin:1,shirt:'#9DB3BC'}, '31 55 58 64'); },
+  hc(v){ return `<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="15" fill="${HAIRC[v]}" stroke="#A9B2B8" stroke-width="${v==='white'?2:0}"/></svg>`; },
+  eyes(v){ return `<svg viewBox="0 0 40 40"><path d="M3 20 Q20 4 37 20 Q20 36 3 20Z" fill="#fff" stroke="#5B6B75" stroke-width="2"/><circle cx="20" cy="20" r="8" fill="${EYEC[v]}"/><circle cx="23" cy="17" r="2.2" fill="#fff"/></svg>`; },
+  s(v){
+    if(v==='kind') return `<svg viewBox="0 0 40 40"><path d="M34 15 C34 7 24 5 20 13 C16 5 6 7 6 15 C6 25 20 32 20 35 C20 32 34 25 34 15Z" fill="#E5677F"/></svg>`;
+    if(v==='smart') return `<svg viewBox="0 0 40 40"><rect x="4" y="9" width="32" height="23" rx="2" fill="#2E5E9E"/><rect x="7" y="11" width="12" height="18" fill="#F7F3E8"/><rect x="21" y="11" width="12" height="18" fill="#F7F3E8"/><line x1="9" x2="17" y1="15" y2="15" stroke="#9DB3BC"/><line x1="9" x2="17" y1="19" y2="19" stroke="#9DB3BC"/><line x1="23" x2="31" y1="15" y2="15" stroke="#9DB3BC"/></svg>`;
+    if(v==='friendly') return `<svg viewBox="0 0 40 40"><rect x="3" y="6" width="34" height="22" rx="9" fill="#fff" stroke="#12324B" stroke-width="2.5"/><path d="M11 28 L9 36 L19 28Z" fill="#fff" stroke="#12324B" stroke-width="2.5" stroke-linejoin="round"/><text x="20" y="22" text-anchor="middle" font-family="Arial" font-weight="700" font-size="13" fill="#12324B">Hi!</text></svg>`;
+    return `<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="#F2B33D"/><path d="M12 15 Q14 12 16 15 M24 15 Q26 12 28 15" stroke="#3E2A00" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M11 21 Q20 34 29 21Z" fill="#7A2E2E"/></svg>`;
+  }
+};
+const SIFAT_LEGEND = `<div class="legend2" aria-label="Arti ikon sifat">${['kind','friendly','funny','smart'].map(v=>`<span>${ICON.s(v)}<b>${v}</b></span>`).join('')}</div>`;
+
+/* =========================================================
+   SKOR, GILIRAN, KERANGKA
+   ========================================================= */
+let G = null, clockTimer = null, extraTimer = null;
+function newGame(id, opts){
+  opts = opts || {};
+  G = { id, start: Date.now(), score:0, total:0, mistakes:0, teams:[0,0], turn:0, teamMode: S.mode==='team' && !opts.solo, noScore: !!opts.noScore };
+  clearInterval(clockTimer); clearInterval(extraTimer);
+  clockTimer = setInterval(()=>{ const c=document.getElementById('clock'); if(c) c.textContent = fmt(Date.now()-G.start); }, 1000);
+}
+function fmt(ms){ const s=Math.max(0,Math.floor(ms/1000)); return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }
+function addPts(pts, passTurn){
+  if(G.teamMode){ G.teams[G.turn] += pts; if(passTurn!==false) G.turn = 1-G.turn; } else G.score += pts;
+  renderBoard();
+}
+function boardHTML(){
+  if(G.noScore) return `<div id="board" class="hide"></div>`;
+  if(G.teamMode) return `<div class="board" id="board"><div class="team a ${G.turn===0?'on':''}">Regu A <span class="s">${G.teams[0]}</span></div><div class="team b ${G.turn===1?'on':''}">Regu B <span class="s">${G.teams[1]}</span></div></div>`;
+  return `<div class="solo" id="board">Skor <span class="s">${G.score}</span></div>`;
+}
+function turnHTML(){ if(!G.teamMode || G.noScore) return `<span id="turn" class="hide"></span>`; return `<span class="turn ${G.turn?'b':'a'}" id="turn">Giliran Regu ${G.turn?'B':'A'}</span>`; }
+function renderBoard(){ const b=document.getElementById('board'); if(b) b.outerHTML = boardHTML(); const t=document.getElementById('turn'); if(t) t.outerHTML = turnHTML(); paintFloat(); }
+/* Papan skor melayang: muncul hanya bila papan asli sudah tergulir keluar layar (mode beregu). pointer-events:none → tidak menghalangi sentuhan. */
+function paintFloat(){
+  const f = document.getElementById('floatBoard'); if(!f) return;
+  const b = document.getElementById('board');
+  const active = G && G.teamMode && !G.noScore && b && !b.classList.contains('hide') && document.getElementById('stage');
+  if(!active){ f.classList.remove('show'); return; }
+  f.innerHTML = `<span class="team a ${G.turn===0?'on':''}">A <span class="s">${G.teams[0]}</span></span><span class="team b ${G.turn===1?'on':''}">B <span class="s">${G.teams[1]}</span></span>${document.getElementById('turn') && !document.getElementById('turn').classList.contains('hide') ? `<span class="turn ${G.turn?'b':'a'}">Giliran ${G.turn?'B':'A'}</span>`:''}`;
+  const r = b.getBoundingClientRect();
+  f.classList.toggle('show', r.bottom < 4);
+}
+window.addEventListener('scroll', paintFloat, {passive:true});
+window.addEventListener('resize', paintFloat);
+
+function shell(m, taskId, taskEn){
+  stopSpeak();
+  $app.innerHTML = `<section class="game"><div class="wrap">
+    <div class="ghead">
+      <button class="back" id="backBtn">‹ Menu</button>
+      <h2><small>Pertemuan ${m.id} · ${m.stage} · ${esc(m.exp)}</small>${esc(m.title)}</h2>
+      <span class="clock" title="Waktu bermain">⏱ <span id="clock">00:00</span></span>
+      ${boardHTML()}
+    </div>
+    <div class="task"><div><p id="taskId">${taskId}</p><p class="en" id="taskEn">${taskEn}</p></div>${turnHTML()}</div>
+    <div id="stage"></div>
+  </div></section>`;
+  document.getElementById('backBtn').onclick = home;
+  window.scrollTo(0,0); paintFloat();
+  return document.getElementById('stage');
+}
+function setTask(idTxt, enTxt){ const a=document.getElementById('taskId'), b=document.getElementById('taskEn'); if(a) a.innerHTML=idTxt; if(b) b.innerHTML=enTxt; }
+function result(m, o){
+  o = o || {};
+  clearInterval(clockTimer); clearInterval(extraTimer); sfx.win();
+  const tb=document.getElementById('turn'); if(tb) tb.classList.add('hide'); paintFloat();
+  const st = document.getElementById('stage'); const time = fmt(Date.now()-G.start);
+  let head, stars, detail;
+  if(G.teamMode && !o.forceSolo){
+    const [a,b] = G.teams; head = a===b ? 'Seri! Kedua regu hebat.' : `Regu ${a>b?'A':'B'} menang!`; stars = 3;
+    detail = `Regu A: <b>${a}</b> poin · Regu B: <b>${b}</b> poin · Waktu ${time}`;
+  } else {
+    const r = o.ratio!=null ? o.ratio : (G.total ? G.score/G.total : 0);
+    stars = r>=0.85?3 : r>=0.55?2 : 1;
+    head = stars===3 ? 'Excellent! Luar biasa.' : stars===2 ? 'Good job! Sedikit lagi.' : 'Keep trying! Ayo ulangi.';
+    detail = (o.detail || `Skor <b>${G.score}</b> dari <b>${G.total}</b>`) + ` · Waktu ${time}`;
+  }
+  st.innerHTML = `<div class="result">
+    <div class="stars" aria-label="${stars} bintang">${'★'.repeat(stars)}<span class="off">${'★'.repeat(3-stars)}</span></div>
+    <h3>${head}</h3><p>${detail}</p>${o.note?`<p>${o.note}</p>`:''}
+    <p class="formatif">Skor permainan adalah umpan balik formatif, bukan nilai KKTP/sumatif.</p>
+    <div class="actions"><button class="btn" id="again">Main lagi</button><button class="btn ghost" id="toMenu">Kembali ke menu</button></div></div>`;
+  document.getElementById('again').onclick = ()=>START[m.id]();
+  document.getElementById('toMenu').onclick = home;
+}
+function castCard(c, extra){ return `<button class="cc" data-n="${esc(c.name)}" aria-label="${esc(c.name)}">${chibi(c)}<b>${esc(c.name)}</b>${extra||''}</button>`; }
+
+/* =========================================================
+   DATA PERTEMUAN
+   ========================================================= */
+const MEETINGS = [
+  { id:1, stage:'BKoF', title:'Character Maker', exp:'Eksplorasi kreatif',
+    sub:'Rakit tokohmu sendiri; setiap pilihan langsung jadi kalimat yang terdengar. Tantangan: dengar deskripsi, lalu buat tokohnya.',
+    goal:'mengenal kata ciri fisik & sifat dalam kalimat utuh; memahami deskripsi lisan.',
+    when:'Inti 1 — setelah kartu ciri dikenalkan (eksplorasi), lalu mode Tantangan sebagai cek pemahaman. ±10 menit.',
+    alt:'Guru membacakan satu deskripsi (5 kalimat) dua kali; murid menggambar tokohnya di kertas, lalu mencocokkan gambarnya dengan teman sebangku.' },
+  { id:2, stage:'MoT', title:'Who Is It?', exp:'Detektif membaca',
+    sub:'Baca petunjuk satu per satu, coret tokoh yang tidak cocok, tebak secepatnya. His/her & is/has jadi kunci jawaban.',
+    goal:'membaca kalimat deskripsi untuk menemukan makna; menyadari fungsi he/she, his/her, is/has.',
+    when:'Inti 2 — setelah unsur kebahasaan (to be, has, possessive) dibahas; menunjukkan bahwa unsur itu menentukan makna.',
+    alt:'Cetak 12 kartu tokoh di meja kelompok; guru membacakan petunjuk satu per satu; murid membalik kartu yang tidak cocok, lalu menebak.' },
+  { id:3, stage:'JCoT', title:'Fix the Robot', exp:'Evaluasi & revisi bersama',
+    sub:'Robot menulis deskripsi gambar tapi banyak salah. Kelas berdiskusi, menemukan, dan membetulkan kesalahannya.',
+    goal:'memeriksa teks deskripsi: struktur, is/has, his/her, dan kesesuaian isi dengan gambar.',
+    when:'Inti 2 — sebelum murid memeriksa teks bersama dengan daftar centang (B.6); melatih cara memeriksa.',
+    alt:'Lembar "tulisan robot" berisi gambar + 5 kalimat dengan 2–3 kesalahan; berpasangan murid melingkari & membetulkannya.' },
+  { id:4, stage:'Persiapan ICoT', title:'Describe to Draw', exp:'Menulis yang punya akibat',
+    sub:'Susun kalimat dari kepingan kata. Robot menggambar tokoh hanya dari tulisanmu — samakan dengan tokoh target.',
+    goal:'menulis deskripsi yang runtut & tepat agar dapat dipahami (1 Identification + min. 4 Description), termasuk memakai and/but dengan tepat.',
+    when:'Pembuka/Inti 1 P4 — jembatan dari JCoT ke menulis mandiri, sebelum draf B.8; atau Jalur Pengayaan. Bukan pengganti B.8.',
+    alt:'Tukar tulisan: murid menulis deskripsi tokoh rahasia; teman menggambar hanya dari tulisan itu; keduanya membandingkan gambar dengan tokoh asli.' },
+  { id:5, stage:'Latihan ICoT', title:'Describe & Guess', exp:'Berbicara untuk ditebak',
+    sub:'Pembicara mengintip kartu rahasia lalu mendeskripsikannya. Regunya menebak dari 12 tokoh.',
+    goal:'berlatih presentasi deskripsi lisan dengan tujuan nyata: agar teman dapat menebak.',
+    when:'Inti 1 (Persiapan) P5 — gladi SEBELUM giliran dinilai. Bukan alat penilaian E.3; asesmen ICoT tetap memakai B.9 & Rubrik E.2/E.3.',
+    alt:'Kartu tokoh tercetak dibagikan tertutup; murid mendeskripsikan tanpa menyebut nama; regu menebak dari papan 12 tokoh.' }
+];
+
+/* =========================================================
+   BERANDA
+   ========================================================= */
+function home(){
+  clearInterval(clockTimer); clearInterval(extraTimer); G=null; onTtsFail = null;
+  const fb = document.getElementById('floatBoard'); if(fb) fb.classList.remove('show');
+  stopSpeak(); playCounts.clear();
+  const pick = ['Sari','Raka','Dewi','Fajar','Tika','Rudi'].map(castBy);
+  $app.innerHTML = `
+  <section class="hero"><div class="wrap">
+    <div>
+      <h2>Who is this?<br>Describe the person!</h2>
+      <p>Lima permainan untuk lima pertemuan TP 7.4 — masing-masing memberi pengalaman belajar yang berbeda dari lembar kerja: merakit tokoh, menjadi detektif, memperbaiki tulisan robot, menulis agar digambar, dan berbicara agar ditebak.</p>
+      <div class="modes"><div class="toggle" role="group" aria-label="Mode bermain">
+        <button data-mode="solo" aria-pressed="${S.mode==='solo'}">Individu / berpasangan (HP)</button>
+        <button data-mode="team" aria-pressed="${S.mode==='team'}">Beregu A vs B (IFP)</button>
+      </div></div>
+      ${ONLINE ? `<div class="modes"><button class="chipbtn" id="dlBtn">⬇ Unduh untuk dimainkan offline</button><button class="chipbtn ${installEvt?'':'hide'}" id="instBtn">＋ Pasang sebagai aplikasi</button></div>`:''}
+    </div>
+    <div class="album" aria-hidden="true">${pick.map(c=>`<figure>${chibi(c,{bg:'#E2F4F8',ref:false})}<figcaption>${c.name}</figcaption></figure>`).join('')}</div>
+  </div></section>
+  <div class="wrap">
+    <div class="path">
+      ${MEETINGS.map(m=>`<button class="meet" data-go="${m.id}">
+        <span class="num"><b>${m.id}</b>Pertemuan ${m.id} · ${m.stage}</span>
+        <h3>${esc(m.title)}</h3>
+        <span class="exp">${esc(m.exp)}</span>
+        <p>${esc(m.sub)}</p>
+        <span class="go">Mulai · 5–10 menit</span>
+      </button>`).join('')}
+    </div>
+    <section class="guide" aria-labelledby="gTitle">
+      <h3 id="gTitle">Panduan guru</h3>
+      <table>
+        <thead><tr><th>Pertemuan</th><th>Tujuan</th><th>Paling cocok dipakai</th><th>Alternatif nondigital</th></tr></thead>
+        <tbody>${MEETINGS.map(m=>`<tr><th>P${m.id} · ${esc(m.title)}<br><span style="font-weight:400;color:var(--muted)">${esc(m.exp)}</span></th><td data-label="Tujuan">${esc(m.goal)}</td><td data-label="Paling cocok dipakai">${esc(m.when)}</td><td data-label="Alternatif nondigital">${esc(m.alt)}</td></tr>`).join('')}</tbody>
+      </table>
+      <ul class="note">
+        <li>MPI bersifat opsional, ±5–10 menit, dan <b>menggantikan sebagian latihan</b> — bukan tambahan di luar alokasi 120 menit. Tujuan & bukti belajarnya sama dengan alternatif nondigital.</li>
+        <li>Skor MPI adalah umpan balik formatif. <b>Tidak dipakai sebagai nilai sumatif</b> dan tidak menambah kriteria KKTP.</li>
+        <li><b>IFP/proyektor:</b> pilih mode Beregu, tekan Layar penuh. Regu bergiliran; poin hanya bertambah bila jawaban tepat. <b>HP murid:</b> bagikan file ini (WhatsApp/Bluetooth), buka di Chrome, pilih mode Individu/berpasangan. Describe to Draw selalu individual.</li>
+        <li><b>Audio tidak pernah berbunyi otomatis.</b> Beri instruksi dulu, lalu tekan <b>▶ Putar</b>; tekan lagi untuk menghentikan. Penghitung “Diputar 2×” membantu menjaga aturan dengar dua kali. Kecepatan diatur dengan tombol <b>Kecepatan</b> di atas (bawaan <b>Pelan</b>: dibacakan per kalimat dengan jeda; tersedia juga <b>Sangat pelan</b> dan <b>Normal</b>). Memilih tombol atau menyusun kalimat tidak memunculkan suara — tiap kalimat punya tombol 🔊 sendiri.</li>
+        <li>Tombol pengeras suara memakai suara bahasa Inggris bawaan perangkat. Bila tidak berbunyi, guru membacakan teksnya (mode Tantangan P1 otomatis menampilkan teks).</li>
+        <li>Semua tokoh adalah tokoh rekaan; tidak ada foto murid. Sifat ditunjukkan lewat tindakan (❤ menolong, 📖 belajar, “Hi!” menyapa, tertawa), bukan dari wajah.</li>
+        <li>Tokoh buatan murid di Character Maker tersimpan di perangkat yang sama dan dapat dipakai sebagai target di Describe to Draw.</li>
+      </ul>
+    </section>
+  </div>`;
+  $app.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>START[b.dataset.go]());
+  $app.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{ S.mode=b.dataset.mode; store.set('mode',S.mode); home(); });
+  const dl = document.getElementById('dlBtn'); if(dl) dl.onclick = downloadSelf;
+  const ib = document.getElementById('instBtn'); if(ib) ib.onclick = ()=>{ if(!installEvt) return; installEvt.prompt(); installEvt.userChoice.finally(()=>{ installEvt=null; ib.classList.add('hide'); }); };
+  window.scrollTo(0,0);
+}
+
+/* =========================================================
+   P1 — CHARACTER MAKER
+   ========================================================= */
+const GROUPS = [
+  { key:'g', label:'He atau She?', opts:[['she','She','perempuan'],['he','He','laki-laki']] },
+  { key:'h', label:'Tinggi badan', opts:[['tall','tall','tinggi'],['short','short','pendek']] },
+  { key:'hair', label:'Rambut', opts:[['long','long hair','rambut panjang'],['short','short hair','rambut pendek'],['curly','curly hair','rambut keriting']] },
+  { key:'hc', label:'Warna rambut', opts:[['black','black','hitam'],['brown','brown','cokelat'],['white','white','putih']] },
+  { key:'eyes', label:'Mata', opts:[['brown','brown eyes','mata cokelat'],['black','black eyes','mata hitam']] },
+  { key:'s', label:'Sifat (dilihat dari tindakannya)', opts:[['kind','kind','baik hati'],['friendly','friendly','ramah'],['funny','funny','lucu'],['smart','smart','pandai']] }
+];
+const SHIRTS = ['#C8466A','#0E7490','#F2B33D','#23885A','#7FD3E6','#12324B'];
+const NAMES_SHE = ['Sari','Dewi','Nina','Maya','Rina','Tika','Ayu','Lina'];
+const NAMES_HE = ['Andi','Raka','Dimas','Bayu','Fajar','Rudi','Iwan','Arif'];
+const CHALLENGES = [ withRel(castBy('Dimas'),'brother'), withRel(castBy('Tika'),'friend'), withRel(castBy('Rina'),'sister'), withRel(castBy('Raka'),'friend'), withRel(castBy('Lina'),'sister') ];
+const KEYLABEL = { g:'He/She', h:'Tinggi badan', hair:'Rambut', hc:'Warna rambut', eyes:'Mata', s:'Sifat' };
+const VALWORD = { she:'She', he:'He', tall:'tall', short:'short', long:'long hair', curly:'curly hair', black:'black', brown:'brown', white:'white', kind:'kind', friendly:'friendly', funny:'funny', smart:'smart' };
+
+function startP1(){
+  const m = MEETINGS[0];
+  let mode = 'free';
+  let t = { g:'she', rel:'friend', name:'Sari', h:'short', hair:'long', hc:'black', eyes:'brown', s:'kind', skin:1, shirt:'#C8466A' };
+  let ci = 0, order = shuffle(CHALLENGES), tries = 0, userShow = false;
+  newGame(1, {noScore:true});
+  const st = shell(m, 'Rakit tokohmu: pilih ciri-cirinya. Dengarkan kalimat yang berubah setiap kali kamu memilih.', 'Make a character. Listen to the sentences.');
+
+  function optBtn(g, o, iconOnly){
+    const pressed = t[g.key]===o[0];
+    const ic = g.key==='g' ? '' : `<span class="ic">${ICON[g.key](o[0])}</span>`;
+    if(iconOnly && g.key!=='g') return `<button class="ob iconly" data-k="${g.key}" data-v="${o[0]}" aria-pressed="${pressed}" aria-label="${o[1]}">${ic}</button>`;
+    return `<button class="ob" data-k="${g.key}" data-v="${o[0]}" aria-pressed="${pressed}">${ic}<span class="w">${o[1]}${iconOnly?'':`<small>${o[2]}</small>`}</span></button>`;
+  }
+  function draw(changed){
+    const chal = mode==='chal';
+    const C = chal ? order[ci] : null;
+    const canHear = ttsReady();
+    const showText = userShow || !canHear;
+    onTtsFail = ()=>{ if(mode==='chal') draw(); };
+    const relOpts = t.g==='he' ? [['friend','friend','teman'],['brother','brother','saudara laki-laki']] : [['friend','friend','teman'],['sister','sister','saudara perempuan']];
+    if(!relOpts.some(o=>o[0]===t.rel)) t.rel = 'friend';
+    const sens = sentences(t);
+    const saved = store.get('chars', []);
+    st.innerHTML = `
+      <div class="tabs" role="tablist">
+        <button role="tab" data-mode="free" aria-selected="${!chal}">Bebas berkreasi</button>
+        <button role="tab" data-mode="chal" aria-selected="${chal}">Tantangan: dengar & buat</button>
+      </div>
+      <div class="maker">
+        <div class="mk-left">
+          ${chal ? `<div class="chal">
+              <p><b>Tantangan ${ci+1} dari ${order.length}.</b> Dengarkan deskripsinya, lalu buat tokoh yang sama.</p>
+              <div class="big">${canHear?`<button class="btn sm playbtn" id="hear" data-label="Putar deskripsi">▶ Putar deskripsi</button><span class="plays">Belum diputar</span><button class="btn ghost sm" id="showTxt">${showText?'Sembunyikan teks':'Tampilkan teks'}</button>`:''}</div>
+              ${showText?`<p class="txt">${sentences(C).map(x=>esc(x.en)).join(' ')}</p>`:''}
+              <p class="hint">${canHear ? 'Audio baru berbunyi setelah tombol <b>▶</b> ditekan — beri instruksi dulu. Dengarkan <b>dua kali</b>. Suara tidak terdengar? Tekan <b>Tampilkan teks</b>, atau guru membacakan deskripsinya.' : (S.sound ? 'Suara bahasa Inggris tidak tersedia di perangkat ini — guru membacakan teks di atas (2×), murid mendengarkan.' : 'Suara dimatikan, jadi teks ditampilkan. Guru dapat membacakannya (2×) agar tetap menjadi latihan menyimak.')}</p>
+            </div>`:''}
+          <div class="stagecard">
+            <div class="fig">${chibi(t)}</div>
+            ${chal ? `<div><p style="margin:0;font-family:var(--en);font-weight:700;color:var(--navy);font-size:1.2em">${esc(C.name)}</p><p class="hint">Tombol pilihan hanya bergambar — pahami arti kata yang kamu dengar.</p><div class="actions" style="margin-top:6px"><button class="btn" id="checkC">Cek tokohku</button></div></div>`
+              : `<ul class="desc">${sens.map(x=>`<li data-k="${x.k}" class="${changed && changed===x.k?'flash':''}">${sayBtn(x.en)}<span class="en">${esc(x.en)}<span class="id">${esc(x.id)}</span></span></li>`).join('')}</ul>`}
+          </div>
+          <div id="fb"></div>
+        </div>
+        <div class="groups">
+          ${chal ? '' : `<div class="grp"><h4>Siapa dia? (Identification)</h4><div class="optrow" style="align-items:center">
+              <span class="w" style="font-family:var(--en);font-weight:700;color:var(--navy)">This is my</span>
+              ${relOpts.map(o=>`<button class="ob" data-k="rel" data-v="${o[0]}" aria-pressed="${t.rel===o[0]}"><span class="w">${o[1]}<small>${o[2]}</small></span></button>`).join('')}
+              <input class="namein" id="nm" value="${esc(t.name)}" maxlength="12" aria-label="Nama tokoh (boleh diketik)">
+            </div>
+            <div class="optrow names" style="margin-top:8px" aria-label="Pilih nama cepat">
+              ${(t.g==='he'?NAMES_HE:NAMES_SHE).slice(0,4).map(n=>`<button class="ob nm ${t.name===n?'on':''}" data-name="${n}" aria-pressed="${t.name===n}"><span class="w">${n}</span></button>`).join('')}
+              <button class="ob nm" data-name="__rand"><span class="w">🎲 Nama acak</span></button>
+            </div></div>`}
+          ${GROUPS.map(g=>`<div class="grp"><h4>${g.label}</h4><div class="optrow">${g.opts.map(o=>optBtn(g,o,chal)).join('')}</div></div>`).join('')}
+          <div class="grp"><h4>Warna kulit & baju (hiasan)</h4><div class="optrow">
+            ${SKIN.map((c,i)=>`<button class="sw" data-skin="${i}" style="background:${c}" aria-pressed="${t.skin===i}" aria-label="Warna kulit ${i+1}"></button>`).join('')}
+            <span style="width:12px"></span>
+            ${SHIRTS.map(c=>`<button class="sw" data-shirt="${c}" style="background:${c}" aria-pressed="${t.shirt===c}" aria-label="Warna baju"></button>`).join('')}
+          </div></div>
+          ${chal ? '' : `<div class="grp"><h4>Simpan tokoh (dipakai lagi di Describe to Draw)</h4>
+            <div class="actions" style="margin-top:0"><button class="btn sm" id="save">Simpan tokoh ini</button>${sayBtn(sens.map(x=>x.en).join(' '))}<span class="hint" style="margin:0">Dengar deskripsi utuh</span></div>
+            ${saved.length?`<div class="saved">${saved.map((c,i)=>`<div class="sv">${chibi(c,{ref:false})}${esc(c.name)}<button class="x" data-del="${i}" aria-label="Hapus ${esc(c.name)}">×</button></div>`).join('')}</div>`:''}
+          </div>`}
+        </div>
+      </div>`;
+    st.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{
+      if(b.dataset.mode===mode) return;
+      mode = b.dataset.mode;
+      if(mode==='chal'){
+        newGame(1); G.total = order.length; renderBoardFull();
+        ci = 0; order = shuffle(CHALLENGES); tries = 0;
+        t = { g:null, rel:'friend', name:'', h:null, hair:null, hc:null, eyes:null, s:null, skin:1, shirt:'#0E7490' };
+        setTask('Dengarkan deskripsi, lalu buat tokoh yang sama dengan menekan tombol bergambar. Tekan <b>Cek tokohku</b>.', 'Listen to the description and make the same character.');
+        stopSpeak(); playCounts.clear(); userShow = false; draw();
+      } else {
+        stopSpeak(); newGame(1, {noScore:true}); renderBoardFull();
+        t = { g:'she', rel:'friend', name:'Sari', h:'short', hair:'long', hc:'black', eyes:'brown', s:'kind', skin:1, shirt:'#C8466A' };
+        setTask('Rakit tokohmu: pilih ciri-cirinya. Dengarkan kalimat yang berubah setiap kali kamu memilih.', 'Make a character. Listen to the sentences.');
+        draw();
+      }
+    });
+    st.querySelectorAll('.ob[data-k]').forEach(b=>b.onclick=()=>{
+      const k=b.dataset.k, v=b.dataset.v; t[k]=v;
+      if(k==='g' && t.rel!=='friend') t.rel = v==='he' ? 'brother' : 'sister';
+      if(k==='g' && mode==='free'){ const pool = v==='he' ? NAMES_HE : NAMES_SHE; if(!pool.includes(t.name) && (NAMES_HE.includes(t.name)||NAMES_SHE.includes(t.name))) t.name = pool[0]; }
+      const key = (k==='hc') ? 'hair' : (k==='g'||k==='rel') ? 'ident' : k;
+      draw(key);
+      const nb = st.querySelector(`.ob[data-k="${k}"][data-v="${v}"]`); if(nb) nb.focus({preventScroll:true});
+    });
+    st.querySelectorAll('[data-name]').forEach(b=>b.onclick=()=>{
+      const pool = t.g==='he' ? NAMES_HE : NAMES_SHE;
+      let n = b.dataset.name;
+      if(n==='__rand'){ const others = pool.filter(x=>x!==t.name); n = others[Math.floor(Math.random()*others.length)]; }
+      t.name = n; draw('ident');
+    });
+    st.querySelectorAll('[data-skin]').forEach(b=>b.onclick=()=>{ t.skin=+b.dataset.skin; draw(); });
+    st.querySelectorAll('[data-shirt]').forEach(b=>b.onclick=()=>{ t.shirt=b.dataset.shirt; draw(); });
+    const nm = st.querySelector('#nm');
+    if(nm){ nm.oninput = ()=>{ t.name = nm.value.replace(/[^A-Za-z '\-]/g,'').slice(0,12) || 'Sari'; const li = st.querySelector('.desc li[data-k="ident"] .en'); const s = sentences(t)[0]; if(li) li.innerHTML = `${esc(s.en)}<span class="id">${esc(s.id)}</span>`; const sb = st.querySelector('.desc li[data-k="ident"] .say'); if(sb) sb.setAttribute('data-say', s.en); }; nm.onchange = ()=>draw(); }
+    const sv = st.querySelector('#save');
+    if(sv) sv.onclick = ()=>{
+      const list = store.get('chars', []);
+      const c = Object.assign({}, t, {name: (t.name||'Sari').trim()});
+      list.unshift(c); store.set('chars', list.slice(0,8));
+      sfx.ok(); draw();
+      st.querySelector('#fb').innerHTML = `<div class="feedback ok">Tokoh <b>${esc(c.name)}</b> tersimpan. Pakai di Pertemuan 4 (Describe to Draw).</div>`;
+    };
+    st.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{ const list = store.get('chars', []); list.splice(+b.dataset.del,1); store.set('chars', list); draw(); });
+    const hear = st.querySelector('#hear');
+    if(hear){ const txt = sentences(order[ci]).map(x=>x.en).join(' '); hear.__text = txt; paintPlay(hear);
+      hear.onclick = ()=>{ if(nowPlaying === txt){ stopSpeak(); return; } playCounts.set(txt, (playCounts.get(txt)||0) + 1); speak(txt); paintPlay(hear); }; }
+    const shw = st.querySelector('#showTxt'); if(shw) shw.onclick = ()=>{ userShow=!userShow; draw(); };
+    const ck = st.querySelector('#checkC');
+    if(ck) ck.onclick = ()=>{
+      setTimeout(()=>{ const f=st.querySelector('#fb'); if(f && window.innerWidth<900) f.scrollIntoView({behavior:'smooth', block:'center'}); }, 30);
+      const C = order[ci]; tries++;
+      const keys = ['g','h','hair','hc','eyes','s'];
+      const wrong = keys.filter(k=>t[k]!==C[k]);
+      const fb = st.querySelector('#fb');
+      if(!wrong.length){
+        sfx.ok(); addPts(tries===1 || G.teamMode ? 1 : 0);
+        fb.innerHTML = `<div class="feedback ok">Tepat! Tokohmu sama dengan deskripsi.<br><span style="font-family:var(--en)">${sentences(C).map(x=>esc(x.en)).join(' ')}</span></div>
+          <div class="actions"><button class="btn" id="nextC">${ci<order.length-1?'Tantangan berikutnya':'Lihat hasil'}</button></div>`;
+        fb.querySelector('#nextC').onclick = ()=>{
+          ci++; tries = 0;
+          if(ci>=order.length) return result(m, {detail:`Tokoh tepat pada percobaan pertama: <b>${G.score}</b> dari <b>${G.total}</b>`});
+          t = { g:null, rel:'friend', name:'', h:null, hair:null, hc:null, eyes:null, s:null, skin:t.skin, shirt:t.shirt };
+          stopSpeak(); playCounts.clear(); userShow = false; draw();
+        };
+      } else {
+        sfx.bad(); G.mistakes++; if(G.teamMode){ G.turn = 1-G.turn; renderBoard(); }
+        const unset = wrong.filter(k=>t[k]==null);
+        fb.innerHTML = `<div class="feedback bad">Belum sama. Periksa: <b>${wrong.map(k=>KEYLABEL[k]).join(', ')}</b>.${unset.length?' Ada ciri yang belum kamu pilih.':''} Dengarkan lagi deskripsinya.</div>`;
+      }
+    };
+  }
+  function renderBoardFull(){ const b=document.getElementById('board'); if(b) b.outerHTML = boardHTML(); const tt=document.getElementById('turn'); if(tt) tt.outerHTML = turnHTML(); }
+  draw();
+}
+
+/* =========================================================
+   P2 — WHO IS IT? (DETEKTIF)
+   ========================================================= */
+function clueSet(c){
+  const P = Pr(c), O = Po(c);
+  return [
+    { k:'h', en:`${P} is ${c.h}.`, test:x=>x.g===c.g && x.h===c.h, key:[P,c.h] },
+    { k:'hair', en:`${P} has ${c.hair} hair.`, test:x=>x.g===c.g && x.hair===c.hair, key:[P,'has',c.hair] },
+    { k:'hc', en:`${O} hair is ${c.hc}.`, test:x=>x.g===c.g && x.hc===c.hc, key:[O,c.hc] },
+    { k:'s', en:`${P} is ${c.s}.`, test:x=>x.g===c.g && x.s===c.s, key:[P,c.s] }
+  ];
+}
+function whyNot(clue, x){
+  const gW = w => w==='he' ? 'laki-laki' : 'perempuan';
+  const target = clue.en;
+  if(!clue.test(Object.assign({}, x, {g:x.g}))){
+    const pronG = /^(He|His)\b/.test(target) ? 'he' : 'she';
+    if(x.g!==pronG) return `Petunjuk “${esc(target)}” memakai <b>${target.split(' ')[0]}</b> → tokohnya ${gW(pronG)}. ${esc(x.name)} ${gW(x.g)}.`;
+    return `Petunjuk “${esc(target)}” tidak cocok dengan ${esc(x.name)}.`;
+  }
+  return '';
+}
+function startP2(){
+  const m = MEETINGS[1]; newGame(2);
+  const ROUNDS = 5; let ri = 0; const targets = shuffle(CAST).slice(0, ROUNDS);
+  G.total = ROUNDS*4;
+  const st = shell(m, 'Baca petunjuk. <b>Ketuk tokoh</b> yang tidak cocok untuk mencoretnya. Bila sudah yakin, tekan <b>Tebak!</b> lalu ketuk tokohnya. Makin sedikit petunjuk, makin banyak poin.', 'Read the clues. Cross out. Guess who it is.');
+  function round(){
+    const T = targets[ri];
+    const clues = [{ k:'ident', en:'This is my friend.', test:()=>true }].concat(shuffle(clueSet(T)));
+    let shown = 1, out = new Set(), guessing = false, over = false;
+    function pts(){ return Math.max(1, 5 - shown); }
+    function draw(newIdx){
+      const left = CAST.filter(c=>!out.has(c.name)).length;
+      st.innerHTML = `<div class="progress"><i style="width:${(ri+(over?1:0))/ROUNDS*100}%"></i></div>
+      <div class="det">
+        <div class="clues">
+          <h4>Petunjuk — ronde ${ri+1} dari ${ROUNDS}</h4>
+          <ol>${clues.map((c,i)=> i<shown ? `<li class="${i===newIdx?'new':''}"><span class="n">${i+1}</span>${sayBtn(c.en)}<span>${esc(c.en)}</span></li>` : `<li class="lock"><span class="n">${i+1}</span>petunjuk tersembunyi</li>`).join('')}</ol>
+          <p class="pts">Poin bila tebakan tepat sekarang: <b>${pts()}</b> · Tokoh tersisa: <b>${left}</b></p>
+          <div class="actions" style="margin-top:6px">
+            ${over ? `<button class="btn" id="next">${ri<ROUNDS-1?'Ronde berikutnya':'Lihat hasil'}</button>` :
+              `<button class="btn ghost" id="more" ${shown>=clues.length?'disabled':''}>Petunjuk berikutnya</button><button class="btn" id="guess">${guessing?'Batal menebak':'Tebak!'}</button>`}
+          </div>
+          <div id="fb"></div>
+        </div>
+        <div>
+          <div class="cast ${guessing?'guess':''}">${CAST.map(c=>castCard(c)).join('')}</div>
+          ${SIFAT_LEGEND}
+        </div>
+      </div>`;
+      st.querySelectorAll('.cc').forEach(b=>{ if(out.has(b.dataset.n)) b.classList.add('out'); });
+      if(over) markEnd();
+      const more = st.querySelector('#more');
+      if(more) more.onclick = ()=>{ if(shown<clues.length){ shown++; sfx.tick(); draw(shown-1); } };
+      const gb = st.querySelector('#guess');
+      if(gb) gb.onclick = ()=>{ guessing=!guessing; draw();
+        if(guessing) st.querySelector('#fb').innerHTML = `<div class="feedback ok">Ketuk tokoh yang kamu tebak.</div>`; };
+      st.querySelectorAll('.cc').forEach(b=>b.onclick=()=>{
+        if(over) return;
+        const n = b.dataset.n;
+        if(!guessing){ out.has(n) ? out.delete(n) : out.add(n); b.classList.toggle('out'); const l = st.querySelector('.pts'); if(l) l.innerHTML = `Poin bila tebakan tepat sekarang: <b>${pts()}</b> · Tokoh tersisa: <b>${CAST.filter(c=>!out.has(c.name)).length}</b>`; return; }
+        over = true; guessing = false;
+        const x = castBy(n), ok = n===T.name;
+        if(ok){ sfx.ok(); addPts(pts()); } else { sfx.bad(); G.mistakes++; addPts(0); }
+        const reason = ok ? '' : (clues.slice(1, shown).map(c=>whyNot(c,x)).find(Boolean) || `Petunjuk berikutnya akan membedakannya: “${esc(clues.slice(1).find(c=>!c.test(x)).en)}”`);
+        draw();
+        const all = clueSet(T).map(c=>c.en);
+        st.querySelector('#fb').innerHTML = `<div class="feedback ${ok?'ok':'bad'}">${ok?`Tepat! Dia <b>${esc(T.name)}</b>. +${pts()} poin.`:`Bukan ${esc(n)}. Jawabannya <b>${esc(T.name)}</b>. ${reason}`}</div>
+          <div class="model"><p>This is my friend, ${esc(T.name)}.</p>${all.map(s=>`<p>${esc(s)}</p>`).join('')}</div>`;
+        if(!ok){ const mb = st.querySelector(`.cc[data-n="${n}"]`); if(mb) mb.classList.add('miss'); }
+      });
+      const nx = st.querySelector('#next');
+      if(nx) nx.onclick = ()=>{ ri++; ri<ROUNDS ? round() : result(m, {detail:`Poin <b>${G.score}</b> dari maksimal <b>${G.total}</b> (makin sedikit petunjuk, makin banyak poin)`}); };
+    }
+    function markEnd(){ st.querySelector(`.cc[data-n="${T.name}"]`).classList.add('win'); }
+    draw();
+  }
+  round();
+}
+
+/* =========================================================
+   P3 — FIX THE ROBOT
+   ========================================================= */
+const ROBOT = mood => `<svg viewBox="0 0 100 100" aria-hidden="true"><line x1="50" y1="6" x2="50" y2="18" stroke="#12324B" stroke-width="4"/><circle cx="50" cy="6" r="5" fill="${mood==='happy'?'#23885A':'#F2B33D'}"/>
+  <rect x="16" y="18" width="68" height="52" rx="14" fill="#7FD3E6" stroke="#12324B" stroke-width="4"/>
+  <circle cx="36" cy="42" r="8" fill="#fff" stroke="#12324B" stroke-width="3"/><circle cx="64" cy="42" r="8" fill="#fff" stroke="#12324B" stroke-width="3"/>
+  <circle cx="${mood==='sad'?34:37}" cy="${mood==='sad'?44:42}" r="3.5" fill="#12324B"/><circle cx="${mood==='sad'?62:65}" cy="${mood==='sad'?44:42}" r="3.5" fill="#12324B"/>
+  ${mood==='happy'?'<path d="M36 56 Q50 66 64 56" stroke="#12324B" stroke-width="4" fill="none" stroke-linecap="round"/>':mood==='sad'?'<path d="M38 61 Q50 54 62 61" stroke="#12324B" stroke-width="4" fill="none" stroke-linecap="round"/>':'<rect x="38" y="56" width="24" height="5" rx="2.5" fill="#12324B"/>'}
+  <rect x="26" y="72" width="48" height="22" rx="8" fill="#0E7490" stroke="#12324B" stroke-width="4"/><circle cx="50" cy="83" r="4" fill="#F2B33D"/></svg>`;
+const FIXR = [
+  { who:'Dewi', rel:'friend', lines:[
+    { t:'This is my friend, Dewi.', alt:'This is his friend, Dewi.' },
+    { t:'She is tall.', fix:'She is short.', alt:'She has short.', type:'gambar', why:'Lihat gambar: Dewi pendek → short.' },
+    { t:'She has curly hair.', alt:'She is curly hair.' },
+    { t:'His hair is black, but her eyes are brown.', fix:'Her hair is black, but her eyes are brown.', alt:'Her hair is black, and her eyes is brown.', type:'his/her', why:'Dewi perempuan → her hair. <b>but</b> tepat di sini: dua warna yang berbeda (hitam ↔ cokelat).' },
+    { t:'She is smart.', alt:'She has smart.' } ]},
+  { who:'Raka', rel:'friend', lines:[
+    { t:'He is tall.', alt:'He has tall.' },
+    { t:'This is my friend, Raka.', order:true, type:'urutan', why:'Identification (siapa orangnya) harus menjadi kalimat pertama.' },
+    { t:'He is curly hair.', fix:'He has curly hair.', alt:'He have curly hair.', type:'is/has', why:'Rambut itu dimiliki → has. Subjek he → has.' },
+    { t:'His hair is black but curly.', fix:'His hair is black and curly.', alt:'His hair are black and curly.', type:'and/but', why:'Black dan curly tidak bertentangan, hanya menambah ciri → pakai <b>and</b>. <b>but</b> dipakai untuk hal yang berbeda/berlawanan.' },
+    { t:'He is friendly.', alt:'He are friendly.' } ]},
+  { who:'Maya', rel:'sister', lines:[
+    { t:'This is my sister, Maya.', alt:'This is my brother, Maya.' },
+    { t:'She is short.', alt:'She is tall.' },
+    { t:'She have long brown hair.', fix:'She has long brown hair.', alt:'She is long brown hair.', type:'is/has', why:'Subjek she → has (bukan have).' },
+    { t:'Her eyes are black.', fix:'Her eyes are brown.', alt:'Her eyes is brown.', type:'gambar', why:'Lihat gambar: mata Maya cokelat → brown.' },
+    { t:'He is funny.', fix:'She is funny.', alt:'Her is funny.', type:'he/she', why:'Maya perempuan → she.' } ]},
+  { who:'Fajar', rel:'brother', lines:[
+    { t:'He is tall.', alt:'He is short.' },
+    { t:'Her hair is short and brown.', fix:'His hair is short and brown.', alt:'His hair are short and brown.', type:'his/her', why:'Fajar laki-laki → his hair.' },
+    { t:'This is my brother, Fajar.', order:true, type:'urutan', why:'Identification (siapa orangnya) harus menjadi kalimat pertama.' },
+    { t:'His eyes are black.', fix:'His eyes are brown.', alt:'His eyes is brown.', type:'gambar', why:'Lihat gambar: mata Fajar cokelat → brown.' },
+    { t:'He is funny.', alt:'He has funny.' } ]}
+];
+const HINT = { 'gambar':'cocokkan isi kalimat dengan gambar', 'his/her':'periksa his/her', 'he/she':'periksa he/she', 'is/has':'periksa is/has', 'urutan':'periksa urutan kalimat', 'and/but':'periksa and/but' };
+function startP3(){
+  const m = MEETINGS[2]; newGame(3);
+  G.total = FIXR.reduce((n,r)=>n+r.lines.filter(l=>l.fix||l.order).length, 0);
+  let ri = 0;
+  const st = shell(m, 'Robot menulis deskripsi gambar, tapi ada yang salah. <b>Ketuk kalimat</b> yang menurutmu salah, lalu pilih perbaikannya. Diskusikan dulu bersama!', 'Find and fix the robot’s mistakes.');
+  function round(){
+    const R = FIXR[ri]; const C = withRel(castBy(R.who), R.rel);
+    let lines = R.lines.map((l,i)=>Object.assign({i, done:false, checked:false}, l));
+    const errTotal = lines.filter(l=>l.fix||l.order).length;
+    let open = null, msg = null, hintShown = false;
+    function found(){ return lines.filter(l=>(l.fix||l.order) && l.done).length; }
+    function draw(){
+      const f = found(), finished = f===errTotal;
+      const mood = finished ? 'happy' : msg && msg.bad ? 'sad' : 'calm';
+      const bubble = finished ? 'Terima kasih! Sekarang tulisanku benar. Dengarkan:' :
+        hintShown ? `Petunjuk: ${lines.filter(l=>(l.fix||l.order)&&!l.done).map(l=>HINT[l.type]).join('; ')}.` :
+        'Aku menulis deskripsi tokoh ini, tapi aku sering salah. Bantu aku!';
+      st.innerHTML = `<div class="progress"><i style="width:${(ri+(finished?1:0))/FIXR.length*100}%"></i></div>
+      <div class="fix">
+        <div class="pcard">${chibi(C)}<div><b>${esc(C.name)}</b>${SIFAT_LEGEND}</div></div>
+        <div>
+          <div class="robo">${ROBOT(mood)}<div class="bubble">${bubble} ${finished?sayBtn(lines.map(l=>l.done&&l.fix?l.fix:l.t).join(' ')):''}</div></div>
+          <div class="counter">Kesalahan ditemukan: ${Array.from({length:errTotal},(_,k)=>`<i class="${k<f?'on':''}"></i>`).join('')} ${f} / ${errTotal}</div>
+          <div class="rtext">${lines.map((l,pos)=>{
+            const txt = l.done && l.fix ? l.fix : l.t;
+            const cls = (l.done ? 'fixed' : '') + (l.checked ? ' checked' : '');
+            let inner = `<button class="line" data-i="${l.i}" ${finished?'disabled':''}><span class="no">${pos+1}</span><span class="tx">${l.done&&l.fix?`<span class="old">${esc(l.t)}</span>`:''}${esc(txt)}</span></button>`;
+            if(open===l.i && !l.done){
+              const ch = l.order ? shuffle([['move','Pindahkan ke nomor 1'],['keep','Sudah benar']]) : shuffle([[ 'keep','Sudah benar' ], ...(l.fix?[['fix',l.fix],['alt',l.alt]]:[['alt',l.alt]])]);
+              inner += `<div class="choices">${ch.map(c=>`<button data-act="${c[0]}" class="${c[0]==='keep'||c[0]==='move'?'keep':''}">${esc(c[1])}</button>`).join('')}</div>`;
+            }
+            if(msg && msg.i===l.i) inner += `<div class="why ${msg.bad?'bad':'ok'}">${msg.text}</div>`;
+            return `<div class="rl ${cls}">${inner}</div>`;
+          }).join('')}</div>
+          <div class="actions">
+            ${finished ? `<button class="btn" id="next">${ri<FIXR.length-1?'Tulisan robot berikutnya':'Lihat hasil'}</button>` : `<button class="btn ghost" id="hint">Minta petunjuk robot</button>`}
+          </div>
+        </div>
+      </div>`;
+      st.querySelectorAll('button.line').forEach(b=>b.onclick=()=>{ const i=+b.dataset.i; const l = lines.find(x=>x.i===i); if(l.done) return; open = open===i ? null : i; msg = null; draw(); });
+      st.querySelectorAll('.choices button').forEach(b=>b.onclick=()=>{
+        const l = lines.find(x=>x.i===open), act = b.dataset.act;
+        const isErr = !!(l.fix||l.order);
+        if(isErr && (act==='fix'||act==='move')){
+          l.done = true; sfx.ok(); addPts(1);
+          if(l.order){ lines = [l].concat(lines.filter(x=>x!==l)); }
+          msg = { i:l.i, text:`✓ Betul! ${l.why}` };
+        } else if(!isErr && act==='keep'){
+          l.checked = true; sfx.tick(); if(G.teamMode){ G.turn=1-G.turn; renderBoard(); }
+          msg = { i:l.i, text:'✓ Betul, kalimat ini tidak salah.' };
+        } else {
+          sfx.bad(); G.mistakes++; if(G.teamMode){ G.turn=1-G.turn; renderBoard(); }
+          msg = { i:l.i, bad:true, text: isErr ? (act==='keep' ? '✗ Coba lihat lagi — kalimat ini ada yang salah.' : '✗ Pilihan itu juga belum tepat. Coba yang lain.') : '✗ Kalimat aslinya sudah benar. Perubahan itu justru membuatnya salah.' };
+        }
+        open = null; draw();
+      });
+      const hb = st.querySelector('#hint'); if(hb) hb.onclick = ()=>{ hintShown = true; draw(); };
+      const nx = st.querySelector('#next'); if(nx) nx.onclick = ()=>{ ri++; ri<FIXR.length ? round() : result(m, {detail:`Kesalahan dibetulkan: <b>${G.score}</b> dari <b>${G.total}</b> · pilihan keliru: ${G.mistakes}`, ratio: Math.max(0, (G.total - G.mistakes*0.5)/G.total)}); };
+    }
+    draw();
+  }
+  round();
+}
+
+/* =========================================================
+   P4 — DESCRIBE TO DRAW
+   ========================================================= */
+const HEIGHTW = ['tall','short'], SIFATW = ['kind','friendly','funny','smart'], TYPEW = ['long','short','curly'], COLW = ['black','brown','white'], EYEW = ['black','brown'];
+const PRONW = ['he','she','his','her'];
+function parseSentence(tokens, ctx, target){
+  const T = tokens.map(x=>x.toLowerCase());
+  const err = (msg)=>({ok:false, msg});
+  if(!T.length) return err('Susun kalimat dulu dari kepingan kata.');
+  /* --- but: menghubungkan dua bagian kalimat yang BERBEDA --- */
+  const bi = T.indexOf('but');
+  if(bi>=0){
+    if(T.indexOf('but', bi+1)>=0) return err('Pakai <b>but</b> sekali saja dalam satu kalimat.');
+    if(bi===0 || bi===T.length-1) return err('<b>but</b> diletakkan di antara dua bagian kalimat: Her hair is black, <b>but</b> her eyes are brown.');
+    if(T[0]==='this') return err('<b>but</b> tidak dipakai di kalimat Identification.');
+    if(PRONW.includes(T[bi+1])){
+      const r1 = parseSentence(tokens.slice(0,bi), ctx, target);
+      if(!r1.ok) return r1;
+      const r2 = parseSentence(tokens.slice(bi+1), Object.assign({}, ctx, {g:r1.set.g}), target);
+      if(!r2.ok) return r2;
+      if((r1.set.h && r2.set.s) || (r1.set.s && r2.set.h)){ const ph = r1.set.h || r2.set.h;
+        return err(`Hati-hati: <b>but</b> berarti “tetapi”. Kalimat ini terdengar seolah ${ID[ph]} itu kekurangan. Agar santun, pakai dua kalimat atau <b>and</b>.`); }
+      const same = Object.keys(r2.set).filter(k=>k!=='g' && k in r1.set);
+      if(same.length) return err('Kedua bagian membahas ciri yang sama. <b>but</b> dipakai untuk dua hal yang berbeda, misalnya warna rambut ↔ warna mata.');
+      const lt = r1.text.replace(/\.$/,''), rt = r2.text.replace(/\.$/,'');
+      return { ok:true, kind:'desc', set:Object.assign({}, r1.set, r2.set), text:`${lt}, but ${rt.charAt(0).toLowerCase()+rt.slice(1)}.` };
+    }
+    /* but di antara kata sifat/ciri */
+    const L = T[bi-1], R = T[bi+1];
+    if(SIFATW.includes(L) && SIFATW.includes(R)) return err(`<b>${L}</b> dan <b>${R}</b> sama-sama sifat baik — tidak bertentangan. Pakai <b>and</b>.`);
+    if((HEIGHTW.includes(L) && SIFATW.includes(R)) || (SIFATW.includes(L) && HEIGHTW.includes(R))){ const ph = HEIGHTW.includes(L) ? L : R;
+      return err(`Hati-hati: <b>but</b> berarti “tetapi”. “${L} but ${R}” terdengar seolah ${ID[ph]} itu kekurangan. Agar santun, tulis dua kalimat terpisah atau pakai <b>and</b>.`); }
+    if(HEIGHTW.includes(L) && HEIGHTW.includes(R)) return err('Tinggi dan pendek tidak bisa sekaligus. Pilih salah satu.');
+    return err('Untuk dua ciri yang sejalan pakai <b>and</b>. <b>but</b> dipakai untuk dua hal yang berbeda: Her hair is black, <b>but</b> her eyes are brown.');
+  }
+  const P = ctx.g==='he' ? 'He' : ctx.g==='she' ? 'She' : 'He/She';
+  if(T[0]==='this'){
+    if(T[1]!=='is' || T[2]!=='my') return err('Pola Identification: <b>This is my … , (nama).</b>');
+    if(!['friend','sister','brother'].includes(T[3])) return err('Setelah <b>This is my</b> sebutkan hubungannya: friend / sister / brother.');
+    if(T.length<5) return err(`Tambahkan nama di akhir: <b>This is my ${T[3]}, ${esc(target.name)}.</b>`);
+    if(T.length>5) return err('Kalimat Identification cukup: This is my … , (nama).');
+    if(tokens[4]!==target.name) return err('Nama tokoh belum tepat.');
+    const g = T[3]==='sister' ? 'she' : T[3]==='brother' ? 'he' : null;
+    if(g && ctx.g && g!==ctx.g) return err(`Tadi kamu memakai ${ctx.g==='he'?'he/his':'she/her'}, tapi ${T[3]} berarti ${g==='he'?'laki-laki':'perempuan'}. Tokohnya satu orang — samakan.`);
+    if(ctx.identified) return err('Identification sudah ada. Sekarang tulis Description (ciri & sifat).');
+    return { ok:true, kind:'ident', set:{ rel:T[3], name:tokens[4], g: g || ctx.g || null }, text:`This is my ${T[3]}, ${tokens[4]}.` };
+  }
+  if(!ctx.identified) return err('Aku belum tahu siapa dia. Kalimat pertama harus <b>Identification</b>: This is my … , (nama).');
+  let g = null, set = {};
+  if(T[0]==='he'||T[0]==='she'){
+    g = T[0]; const v = T[1], rest = T.slice(2);
+    if(!v) return err(`Lanjutkan: ${tokens[0]} is … / ${tokens[0]} has …`);
+    if(v==='are') return err(`<b>${tokens[0]}</b> memakai <b>is</b>, bukan are.`);
+    if(v==='have') return err(`<b>${tokens[0]}</b> memakai <b>has</b>, bukan have.`);
+    if(v==='is'){
+      if(rest.includes('hair')||rest.includes('eyes')) return err(`Rambut & mata itu <b>dimiliki</b>. Pakai has: <b>${tokens[0]} has … hair.</b>`);
+      const adj = rest.filter(w=>w!=='and');
+      if(!adj.length) return err(`Lengkapi: ${tokens[0]} is … (tall, short, kind …).`);
+      if(rest[0]==='and' || rest[rest.length-1]==='and' || rest.join(' ').includes('and and')) return err('Letakkan <b>and</b> di antara dua kata sifat: She is kind and smart.');
+      for(const a of adj){
+        if(HEIGHTW.includes(a)) set.h = a;
+        else if(SIFATW.includes(a)) set.s = a;
+        else if(['long','curly'].includes(a)) return err(`<b>${a}</b> menjelaskan rambut. Tulis: <b>${tokens[0]} has ${a} hair.</b>`);
+        else if(COLW.includes(a)) return err(`Warna apa? Rambut atau mata? Tulis: <b>${tokens[0]} has ${a} hair.</b>`);
+        else return err('Setelah is, pakai kata sifat: tall, short, kind, friendly, funny, smart.');
+      }
+    } else if(v==='has'){
+      const noun = rest[rest.length-1];
+      if(noun!=='hair' && noun!=='eyes'){
+        if(rest.length===1 && (HEIGHTW.includes(rest[0])||SIFATW.includes(rest[0]))) return err(`<b>${rest[0]}</b> bukan benda yang dimiliki. Pakai is: <b>${tokens[0]} is ${rest[0]}.</b>`);
+        return err(`Setelah has, akhiri dengan bendanya: <b>… hair</b> atau <b>… eyes</b>.`);
+      }
+      const mods = rest.slice(0,-1).filter(w=>w!=='and');
+      if(!mods.length) return err(`Seperti apa? Contoh: ${tokens[0]} has long black ${noun}.`);
+      for(const a of mods){
+        if(noun==='hair'){ if(TYPEW.includes(a)) set.hair=a; else if(COLW.includes(a)) set.hc=a; else return err(`<b>${a}</b> tidak menjelaskan rambut.`); }
+        else { if(EYEW.includes(a)) set.eyes=a; else return err('Mata dijelaskan dengan warna: black / brown.'); }
+      }
+    } else return err(`Setelah ${tokens[0]} pakai <b>is</b> atau <b>has</b>.`);
+  } else if(T[0]==='his'||T[0]==='her'){
+    g = T[0]==='his' ? 'he' : 'she'; const noun = T[1], v = T[2], rest = T.slice(3);
+    if(noun!=='hair' && noun!=='eyes') return err(`Setelah ${tokens[0]} sebutkan bendanya: <b>hair</b> atau <b>eyes</b>.`);
+    if(!v) return err(`Lanjutkan: ${tokens[0]} ${noun} ${noun==='hair'?'is':'are'} …`);
+    if(noun==='hair' && v!=='is') return err(`Hair (rambut) memakai <b>is</b>: ${tokens[0]} hair is …`);
+    if(noun==='eyes' && v!=='are') return err(`Eyes (mata) lebih dari satu → pakai <b>are</b>: ${tokens[0]} eyes are …`);
+    const adj = rest.filter(w=>w!=='and');
+    if(!adj.length) return err('Sebutkan cirinya.');
+    for(const a of adj){
+      if(noun==='hair'){ if(TYPEW.includes(a)) set.hair=a; else if(COLW.includes(a)) set.hc=a; else return err(`<b>${a}</b> tidak menjelaskan rambut.`); }
+      else { if(EYEW.includes(a)) set.eyes=a; else return err('Mata dijelaskan dengan warna: black / brown.'); }
+    }
+  } else return err('Aku tidak mengerti. Mulai kalimat dengan <b>This is my</b> / <b>He</b> / <b>She</b> / <b>His</b> / <b>Her</b>.');
+  if(ctx.g && g!==ctx.g) return err(`Tadi kamu memakai ${ctx.g==='he'?'he/his':'she/her'}, sekarang ${g==='he'?'he/his':'she/her'}? Tokohnya satu orang — pakai kata ganti yang sama.`);
+  set.g = g;
+  let text = tokens.join(' ').replace(/ and /g,' and ') + '.';
+  text = text.charAt(0).toUpperCase() + text.slice(1);
+  return { ok:true, kind:'desc', set, text };
+}
+const P4_PRESETS = [ withRel(castBy('Rina'),'sister'), withRel(castBy('Rudi'),'brother'), withRel(castBy('Tika'),'friend'), withRel(castBy('Bayu'),'friend') ];
+function startP4(){
+  const m = MEETINGS[3]; newGame(4, {solo:true, noScore:true});
+  const st = shell(m, 'Pilih tokoh target. Lalu susun kalimat dari kepingan kata. Robot hanya menggambar dari tulisanmu.', 'Write sentences. The robot draws only what you write.');
+  function choose(){
+    const saved = store.get('chars', []);
+    st.innerHTML = `<div class="qcard"><p class="qnum">Pilih tokoh yang akan kamu deskripsikan</p>
+      <div class="cast" style="grid-template-columns:repeat(auto-fill,minmax(120px,1fr))">${P4_PRESETS.map((c,i)=>`<button class="cc" data-p="${i}">${chibi(c)}<b>${esc(c.name)}</b></button>`).join('')}
+      ${saved.map((c,i)=>`<button class="cc" data-s="${i}">${chibi(c)}<b>${esc(c.name)}</b><span class="hint" style="margin:0">buatanmu</span></button>`).join('')}</div>
+      ${saved.length?'':'<p class="hint">Tokoh buatanmu di Character Maker (P1) juga akan muncul di sini.</p>'}</div>`;
+    st.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>play(P4_PRESETS[+b.dataset.p]));
+    st.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>play(Object.assign({rel:'friend'}, saved[+b.dataset.s])));
+  }
+  function play(target){
+    G.start = Date.now();
+    let accepted = [], ctx = { identified:false, g:null }, robo = {}, cur = [], confused = 0, msg = null;
+    const BANK = [
+      ['Siapa', ['This','is','my','friend','sister','brother', target.name]],
+      ['Kata ganti', ['He','She','His','Her']],
+      ['Kata kerja & sambung', ['is','are','has','have','and','but']],
+      ['Benda', ['hair','eyes']],
+      ['Ciri', ['tall','short','long','curly','black','brown','white']],
+      ['Sifat', ['kind','friendly','funny','smart']]
+    ];
+    function compare(){
+      const rows = [
+        ['Identification di awal', ctx.identified ? 'ok' : 'wait', ctx.identified ? `This is my ${robo.rel}, ${robo.name}.` : 'belum ada'],
+        ['He / She', robo.g ? (robo.g===target.g?'ok':'bad') : 'wait', robo.g ? (robo.g===target.g?Pr(robo):`robot: ${Pr(robo)}, target: ${Pr(target)}`) : 'belum disebut']
+      ];
+      [['Tinggi badan','h'],['Jenis rambut','hair'],['Warna rambut','hc'],['Mata','eyes'],['Sifat','s']].forEach(([lab,k])=>{
+        rows.push([lab, robo[k] ? (robo[k]===target[k]?'ok':'bad') : 'wait', robo[k] ? (robo[k]===target[k]? VALWORD[robo[k]] + (k==='eyes'?' eyes':'') : `robot: ${VALWORD[robo[k]]}, target berbeda`) : 'belum disebut']);
+      });
+      return rows;
+    }
+    function draw(){
+      const rows = compare();
+      const descN = accepted.filter(a=>a.kind==='desc').length;
+      const allOk = rows.every(r=>r[1]==='ok');
+      const win = allOk && descN>=4;
+      const roboT = Object.assign({ shirt:'#9DB3BC', skin:1 }, robo);
+      st.innerHTML = `<div class="draw">
+        <div class="pair">
+          <div class="pc"><h5>Tokoh target</h5>${chibi(target)}<b>${esc(target.name)}</b></div>
+          <div class="pc"><h5>Gambar robot</h5>${ctx.identified ? chibi(roboT) : chibi({}, {unknown:true})}<b>${ctx.identified ? esc(robo.name) : '?'}</b></div>
+          <div class="cmp">${rows.map(r=>`<div><span class="st ${r[1]}">${r[1]==='ok'?'✓':r[1]==='bad'?'✗':'·'}</span><span><b>${r[0]}:</b> ${esc(r[2])}</span></div>`).join('')}
+            <div><span class="st ${descN>=4?'ok':'wait'}">${descN>=4?'✓':'·'}</span><span><b>Kalimat Description:</b> ${descN} (minimal 4)</span></div></div>
+        </div>
+        <div>
+          <div class="mytext"><h4>Teksku ${accepted.length?sayBtn(accepted.map(a=>a.text).join(' ')):''}</h4>
+            ${accepted.length ? `<ol>${accepted.map(a=>`<li>${esc(a.text)}</li>`).join('')}</ol>` : '<p class="empty">Belum ada kalimat. Mulai dengan Identification.</p>'}
+            ${accepted.length && !win ? `<div class="actions" style="margin-top:6px"><button class="btn ghost sm" id="undo">Hapus kalimat terakhir</button></div>`:''}
+          </div>
+          ${win ? `<div class="robo">${ROBOT('happy')}<div class="bubble">Gambarku sama dengan ${esc(target.name)}! Tulisanmu jelas dan runtut.</div></div>
+              <div class="actions"><button class="btn" id="finish">Lihat hasil</button><button class="btn ghost" id="other">Coba tokoh lain</button></div>` : `
+          <div class="line-build" id="lb">${cur.length ? cur.map((w,i)=>`<button class="tk" data-ci="${i}" aria-label="Hapus ${esc(w)}">${esc(w)}</button>`).join('') : '<span class="ph">Ketuk kepingan kata di bawah untuk menyusun kalimat…</span>'}</div>
+          <div class="actions" style="margin-top:8px"><button class="btn" id="send" ${cur.length?'':'disabled'}>Kirim ke robot</button><button class="btn ghost sm" id="bk" ${cur.length?'':'disabled'}>⌫ Hapus kata</button><button class="btn ghost sm" id="clr" ${cur.length?'':'disabled'}>Kosongkan</button></div>
+          <div class="robomsg">${msg ? `<div class="robo">${ROBOT(msg.bad?'sad':'happy')}<div class="bubble">${msg.text}</div></div>` : ''}</div>
+          <div class="bank">${BANK.map(([lbl,ws])=>`<div class="row"><span class="lbl">${lbl}</span>${ws.map(w=>`<button class="tile" data-w="${esc(w)}">${esc(w)}</button>`).join('')}</div>`).join('')}</div>`}
+        </div></div>`;
+      st.querySelectorAll('.tile').forEach(b=>b.onclick=()=>{ if(cur.length<12){ cur.push(b.dataset.w); msg=null; } else msg={bad:true,text:'Kalimatnya terlalu panjang. Kirim dulu, atau hapus beberapa kata.'}; draw(); });
+      const clr = st.querySelector('#clr'); if(clr) clr.onclick = ()=>{ cur=[]; msg=null; draw(); };
+      st.querySelectorAll('.tk').forEach(b=>b.onclick=()=>{ cur.splice(+b.dataset.ci,1); draw(); });
+      const bk = st.querySelector('#bk'); if(bk) bk.onclick = ()=>{ cur.pop(); draw(); };
+      const send = st.querySelector('#send');
+      if(send) send.onclick = ()=>{
+        const r = parseSentence(cur, ctx, target);
+        if(!r.ok){ confused++; sfx.bad(); msg = { bad:true, text:`Aku bingung… ${r.msg}<br><span class="hint">Perbaiki kalimatmu: ketuk kata yang salah untuk menghapusnya, atau tekan Kosongkan.</span>` }; draw(); return; }
+        const before = JSON.stringify(robo);
+        if(r.kind==='ident'){ ctx.identified = true; robo.rel = r.set.rel; robo.name = r.set.name; if(r.set.g){ robo.g = r.set.g; ctx.g = r.set.g; } }
+        else { Object.keys(r.set).forEach(k=>{ robo[k] = r.set[k]; }); ctx.g = r.set.g; }
+        accepted.push({ kind:r.kind, text:r.text, tokens:cur.slice() });
+        cur = []; sfx.ok();
+        const changedWrong = compare().filter(x=>x[1]==='bad').map(x=>x[0]);
+        msg = { bad:false, text: `${sayBtn(r.text)} ` + (before===JSON.stringify(robo) ? 'Aku sudah tahu itu. Coba tulis ciri lain.' : changedWrong.length ? `Aku menggambar sesuai tulisanmu. Tapi bandingkan lagi: <b>${changedWrong.join(', ')}</b> berbeda dengan target.` : 'Siap! Aku menggambar sesuai tulisanmu.') };
+        draw();
+      };
+      const undo = st.querySelector('#undo');
+      if(undo) undo.onclick = ()=>{
+        accepted.pop(); ctx = { identified:false, g:null }; robo = {};
+        const keep = accepted; accepted = [];
+        keep.forEach(a=>{ const r = parseSentence(a.tokens, ctx, target); if(r.ok){ if(r.kind==='ident'){ ctx.identified=true; robo.rel=r.set.rel; robo.name=r.set.name; if(r.set.g){robo.g=r.set.g; ctx.g=r.set.g;} } else { Object.assign(robo, r.set); ctx.g=r.set.g; } accepted.push(a); } });
+        msg = null; draw();
+      };
+      const fin = st.querySelector('#finish');
+      if(fin) fin.onclick = ()=>{ const stars = confused<=1?1 : confused<=3?0.7 : 0.4;
+        result(m, { ratio: stars, detail:`Teks ${accepted.length} kalimat (1 Identification + ${descN} Description) · robot bingung ${confused}×`,
+          note:`<span style="font-family:var(--en);font-weight:700;color:var(--navy)">${accepted.map(a=>esc(a.text)).join(' ')}</span>` }); };
+      const oth = st.querySelector('#other'); if(oth) oth.onclick = choose;
+    }
+    draw();
+  }
+  choose();
+}
+
+/* =========================================================
+   P5 — DESCRIBE & GUESS BATTLE
+   ========================================================= */
+function startP5(){
+  const m = MEETINGS[4]; newGame(5);
+  let pool = shuffle(CAST), secret = null, phase = 'ready', timeLeft = 60, rounds = 0, correct = 0, guessed = null, ticks = {a:false, b:false};
+  const st = shell(m, 'Pembicara maju dan mengintip kartu rahasia (teman-teman tutup mata). Pembicara mendeskripsikan tokoh <b>tanpa menyebut nama</b>. Regunya menebak.', 'Describe the secret person. Your team guesses.');
+  function frames(){ return `<details><summary class="hint" style="cursor:pointer">Bantuan pola kalimat</summary><div class="frames">
+    <p>This is my friend. <em>(tanpa nama!)</em></p><p>He / She is … .</p><p>He / She has … hair.</p><p>His / Her eyes are … .</p><p>He / She is kind / friendly / funny / smart.</p>
+    <p>His / Her hair is … , <b>but</b> his / her eyes are … . <em>(dua hal yang berbeda)</em></p></div></details>`; }
+  function draw(){
+    const team = G.teamMode ? `Regu ${G.turn?'B':'A'}` : 'Pembicara';
+    let ctrl = '';
+    if(phase==='ready') ctrl = `<h4>Ronde ${rounds+1} · ${team}</h4>
+      <p>1. Pilih satu pembicara. Ia maju ke depan.</p><p>2. Teman-teman <b>tutup mata</b>.</p>
+      <div class="actions"><button class="btn" id="peek">Intip kartu rahasia</button>${rounds?`<button class="btn ghost" id="end">Selesai & lihat hasil</button>`:''}</div>`;
+    else if(phase==='talk') ctrl = `<h4>${team}: deskripsikan!</h4>
+      <div class="timer ${timeLeft<=10?'low':''}" id="tm">${fmt(timeLeft*1000)}</div>
+      <div class="rule">Mulai dengan <b>This is my friend.</b> (tanpa nama), lalu minimal 4 kalimat Description. Regu menebak dengan mengetuk tokoh.</div>
+      <label class="tick"><input type="checkbox" data-t="a" ${ticks.a?'checked':''}><span>Kalimat pertama Identification <b>(+1)</b></span></label>
+      <label class="tick"><input type="checkbox" data-t="b" ${ticks.b?'checked':''}><span>Menyebut minimal 4 ciri <b>(+1)</b></span></label>
+      <p class="hint">Guru/kelas mencentang saat mendengarkan. Tebakan tepat <b>+2</b>.</p>
+      ${frames()}`;
+    else if(phase==='done'){
+      const ok = guessed===secret.name;
+      const desc = sentences(withRel(secret,'friend'));
+      ctrl = `<h4>${ok?'Tepat!':'Belum tepat'}</h4>
+        <div class="feedback ${ok?'ok':'bad'}">${ok?`Regu menebak <b>${esc(secret.name)}</b> dengan benar.`:`Tebakan: ${esc(guessed||'—')}. Tokoh rahasia: <b>${esc(secret.name)}</b>.`} Poin ronde ini: <b>${(ok?2:0)+(ticks.a?1:0)+(ticks.b?1:0)}</b></div>
+        <div class="model"><p style="font-family:var(--font);font-weight:400;color:var(--muted);font-size:.85em">Contoh deskripsi ${sayBtn(desc.map(x=>x.en).join(' '))}</p>${desc.map(x=>`<p>${esc(x.en)}</p>`).join('')}</div>
+        <div class="actions"><button class="btn" id="nextR">${pool.length?'Ronde berikutnya':'Lihat hasil'}</button><button class="btn ghost" id="end">Selesai</button></div>`;
+    }
+    st.innerHTML = `<div class="bt"><div class="ctrl">${ctrl}</div>
+      <div><div class="cast ${phase==='talk'?'guess':''}">${CAST.map(c=>castCard(c)).join('')}</div>${SIFAT_LEGEND}</div></div>`;
+    if(phase==='done'){ st.querySelector(`.cc[data-n="${secret.name}"]`).classList.add('win'); if(guessed && guessed!==secret.name) st.querySelector(`.cc[data-n="${guessed}"]`).classList.add('miss'); }
+    const pk = st.querySelector('#peek'); if(pk) pk.onclick = peek;
+    const en = st.querySelector('#end'); if(en) en.onclick = finish;
+    st.querySelectorAll('[data-t]').forEach(c=>c.onchange=()=>{ ticks[c.dataset.t] = c.checked; });
+    st.querySelectorAll('.cc').forEach(b=>b.onclick=()=>{ if(phase!=='talk') return; guessed = b.dataset.n; endRound(); });
+    const nr = st.querySelector('#nextR'); if(nr) nr.onclick = ()=>{ if(!pool.length) return finish(); phase='ready'; ticks={a:false,b:false}; guessed=null; draw(); };
+  }
+  function peek(){
+    secret = pool.pop();
+    const ov = document.createElement('div'); ov.className='overlay';
+    ov.innerHTML = `<div class="sheet"><p>Hanya untuk pembicara</p>${chibi(secret)}<h3>${esc(secret.name)}</h3><p>Ingat ciri-cirinya. Jangan sebut namanya!</p><div class="actions" style="justify-content:center"><button class="btn" id="hideS">Sudah ingat — mulai bicara</button></div></div>`;
+    document.body.appendChild(ov);
+    ov.querySelector('#hideS').focus();
+    ov.querySelector('#hideS').onclick = ()=>{ ov.remove(); phase='talk'; timeLeft=60; draw(); startTimer(); };
+  }
+  function startTimer(){
+    clearInterval(extraTimer);
+    extraTimer = setInterval(()=>{
+      timeLeft--; const el = document.getElementById('tm');
+      if(el){ el.textContent = fmt(timeLeft*1000); el.classList.toggle('low', timeLeft<=10); }
+      if(timeLeft<=10 && timeLeft>0) sfx.tick();
+      if(timeLeft<=0){ clearInterval(extraTimer); if(el) el.textContent = 'Waktu habis — tebak!'; }
+    }, 1000);
+  }
+  function endRound(){
+    clearInterval(extraTimer);
+    const ok = guessed===secret.name; rounds++; if(ok) correct++;
+    ok ? sfx.ok() : sfx.bad();
+    const pts = (ok?2:0)+(ticks.a?1:0)+(ticks.b?1:0);
+    G.total += 4; addPts(pts, false);
+    phase='done'; draw();
+    if(G.teamMode){ G.turn = 1-G.turn; renderBoard(); }
+  }
+  function finish(){ clearInterval(extraTimer); if(!rounds){ home(); return; } result(m, { detail:`Ronde dimainkan: <b>${rounds}</b> · tebakan tepat: <b>${correct}</b>` }); }
+  draw();
+}
+
+const START = {1:startP1, 2:startP2, 3:startP3, 4:startP4, 5:startP5};
+
+/* ---- tombol putar/hentikan + penghitung (audio hanya lewat tombol) ---- */
+const playCounts = new Map();
+function paintPlay(b){
+  const t = b.__text, playing = nowPlaying === t, n = playCounts.get(t) || 0;
+  b.classList.toggle('playing', playing); b.setAttribute('aria-pressed', playing);
+  b.textContent = playing ? '⏹ Hentikan' : (n ? '▶ Putar lagi' : '▶ ' + b.dataset.label);
+  const c = b.parentNode && b.parentNode.querySelector('.plays'); if(c) c.textContent = n ? `Diputar ${n}×` : 'Belum diputar';
+}
+playListeners.add(()=>document.querySelectorAll('.playbtn').forEach(b=>{ if(b.__text != null) paintPlay(b); }));
+/* ---- tombol kecepatan suara (atas) ---- */
+const speedBtn = document.getElementById('speedBtn');
+function paintSpeed(){ if(speedBtn) speedBtn.textContent = 'Kecepatan: ' + (SPEEDS[S.speed] || SPEEDS.pelan).label; }
+if(speedBtn){
+  if(!canSpeak) speedBtn.classList.add('hide');
+  speedBtn.onclick = ()=>{ const i = SPEED_ORDER.indexOf(S.speed); S.speed = SPEED_ORDER[(i+1) % SPEED_ORDER.length]; store.set('speed', S.speed); paintSpeed(); toast('Kecepatan suara: ' + SPEEDS[S.speed].label + '. Berlaku saat audio diputar berikutnya.'); };
+  paintSpeed();
+}
+
+/* =========================================================
+   TOMBOL ATAS
+   ========================================================= */
+const soundBtn = document.getElementById('soundBtn');
+function paintSound(){ soundBtn.setAttribute('aria-pressed', S.sound); soundBtn.textContent = S.sound ? 'Suara aktif' : 'Suara mati'; }
+soundBtn.onclick = ()=>{ S.sound=!S.sound; store.set('sound',S.sound); if(!S.sound) stopSpeak(); paintSound(); };
+paintSound();
+const fsBtn = document.getElementById('fsBtn');
+const FS_MSG = 'Mode layar penuh diblokir browser. Gunakan menu fullscreen browser/perangkat (misalnya F11 atau tombol layar penuh di PID).';
+fsBtn.onclick = ()=>{
+  const de = document.documentElement;
+  const req = de.requestFullscreen || de.webkitRequestFullscreen;
+  if(document.fullscreenElement || document.webkitFullscreenElement){ (document.exitFullscreen || document.webkitExitFullscreen).call(document); return; }
+  if(!req){ toast(FS_MSG); return; }
+  try{ const p = req.call(de); if(p && p.catch) p.catch(()=>toast(FS_MSG)); }catch(e){ toast(FS_MSG); }
+};
+document.addEventListener('fullscreenchange', ()=>{ fsBtn.textContent = document.fullscreenElement ? 'Keluar layar penuh' : 'Layar penuh'; });
+
+/* ---- GitHub Pages: unduh offline, pasang aplikasi, service worker ---- */
+function downloadSelf(){
+  const name = 'MPI_TP_7_4_My_Family.html';
+  fetch(location.href.split('#')[0], {cache:'no-cache'}).catch(()=>caches.match('./index.html')).then(r=>{ if(!r) throw 0; return r.text(); }).then(txt=>{
+    const url = URL.createObjectURL(new Blob([txt], {type:'text/html'}));
+    const a = document.createElement('a'); a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url), 4000);
+    toast('File tersimpan di folder Unduhan. Buka dengan Chrome untuk bermain tanpa internet.');
+  }).catch(()=>toast('Gagal mengunduh. Coba lagi saat terhubung ke internet.'));
+}
+window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); installEvt = e; const ib = document.getElementById('instBtn'); if(ib) ib.classList.remove('hide'); });
+if(ONLINE){ const ml = document.createElement('link'); ml.rel='manifest'; ml.href='manifest.webmanifest'; document.head.appendChild(ml); }
+if(ONLINE && 'serviceWorker' in navigator){
+  window.addEventListener('load', ()=>{ navigator.serviceWorker.register('sw.js').catch(()=>{}); });
+}
+
+home();
+})();
+
+</script>
+</body>
+</html>
